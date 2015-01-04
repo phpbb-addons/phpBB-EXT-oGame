@@ -1,0 +1,28 @@
+{
+	"name": "un1matr1x/ogame",
+	"type": "phpbb-extension",
+	"description": "This is an Extension for phpBB 3.1 about oGame",
+	"homepage": "https://github.com/Un1matr1x/phpBB-EXT-oGame",
+	"version": "0.1.0",
+	"time": "2015-01-02",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "Falk Seidel",
+			"email": "un1@un1matr1x.de",
+			"homepage": "http://cr4.me/",
+			"role": "Lead Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3",
+		"composer/installers": "~1.0"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "oGame Extension",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0,<3.2.*@dev"
+		}
+	}
+}
