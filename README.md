@@ -32,16 +32,21 @@ to phpBB3, but might not be interpreted less hard
 
 [![Build Status](https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame.svg)]
 (https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame)
+&nbsp;&bull;&nbsp;
 [![Scrutinizer Code Quality]
 (https://scrutinizer-ci.com/g/Un1matr1x/phpBB-EXT-oGame/badges/quality-score.png?b=master)]
 (https://scrutinizer-ci.com/g/Un1matr1x/phpBB-EXT-oGame/?branch=master)
-[![SensioLabsInsight]
-(https://insight.sensiolabs.com/projects/b20ec9c8-2191-41a8-b792-df4dae8d9204/mini.png)]
-(https://insight.sensiolabs.com/projects/b20ec9c8-2191-41a8-b792-df4dae8d9204)
+&nbsp;&bull;&nbsp;
 [![Code Climate](https://codeclimate.com/github/Un1matr1x/phpBB-EXT-oGame/badges/gpa.svg)]
 (https://codeclimate.com/github/Un1matr1x/phpBB-EXT-oGame)
+&nbsp;&bull;&nbsp;
 [![Codacy Badge](https://www.codacy.com/project/badge/b4d3eff7a48c4fd69bb3fa70f2829c36)]
 (https://www.codacy.com/public/github/phpBB-EXT-oGame)
+&nbsp;&bull;&nbsp;
+[![SensioLabsInsight]
+(https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f/mini.png)]
+(https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f)
+&nbsp;&bull;&nbsp;
 [![Dependency Status]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c/badge.svg?style=flat)]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c#tab-settings)
