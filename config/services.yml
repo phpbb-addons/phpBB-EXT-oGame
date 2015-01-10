@@ -1,0 +1,15 @@
+services:
+    un1matr1x.ogame.controller:
+        class: un1matr1x\ogame\controller\main
+        arguments:
+            - @config
+            - @controller.helper
+            - @template
+            - @user
+    un1matr1x.demo.listener:
+        class: un1matr1x\ogame\event\main_listener
+        arguments:
+            - @controller.helper
+            - @template
+        tags:
+            - { name: event.listener }
