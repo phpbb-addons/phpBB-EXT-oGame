@@ -25,8 +25,8 @@
 			"phpbb/phpbb": ">=3.1.0,<3.2.*@dev"
 		},
 		"version-check": {
-			"host": "un1matr1x.github.io/phpBB-EXT-oGame",
-			"directory": "/versioncheck",
+			"host": "un1matr1x.github.io",
+			"directory": "/phpBB-EXT-oGame/versioncheck",
 			"filename": "un1matr1x_ogame_version.json"
 		}
 	}
