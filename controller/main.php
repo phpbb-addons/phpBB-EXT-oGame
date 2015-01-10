@@ -24,13 +24,13 @@ class main
 	protected $user;
 
 	/**
-	* Constructor
-	*
-	* @param \phpbb\config\config		$config
-	* @param \phpbb\controller\helper	$helper
-	* @param \phpbb\template\template	$template
-	* @param \phpbb\user				$user
-	*/
+	 * Constructor
+	 *
+	 * @param \phpbb\config\config		$config
+	 * @param \phpbb\controller\helper	$helper
+	 * @param \phpbb\template\template	$template
+	 * @param \phpbb\user				$user
+	 */
 	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->config = $config;
