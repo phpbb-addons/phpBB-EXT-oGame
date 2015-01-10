@@ -29,13 +29,16 @@ matrix:
 env:
   global:
     - EXTNAME="un1matr1x/ogame"  # CHANGE name of the extension HERE
-    - SNIFF="1"            # Should we run code sniffer on your code?
-    - IMAGE_ICC="1"        # Should we run icc profile sniffer on your images?
-    - EPV="1"              # Should we run EPV (Extension Pre Validator) on your code?
+    - SNIFF="1"                  # Should we run code sniffer on your code?
+    - IMAGE_ICC="1"              # Should we run icc profile sniffer on your images?
+    - EPV="1"                    # Should we run EPV (Extension Pre Validator) on your code?
     - PHPBB_BRANCH="develop-ascraeus"
 
+before_install:
+  - composer self-update --verbose
+
 install:
-  - composer install --dev --no-interaction --prefer-source
+  - composer install --dev --no-interaction --prefer-source --verbose
   - travis/prepare-phpbb.sh $EXTNAME $PHPBB_BRANCH
   - cd ../../phpBB3
   - travis/prepare-extension.sh $EXTNAME $PHPBB_BRANCH
