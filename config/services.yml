@@ -6,7 +6,7 @@ services:
             - @controller.helper
             - @template
             - @user
-    un1matr1x.demo.listener:
+    un1matr1x.ogame.listener:
         class: un1matr1x\ogame\event\main_listener
         arguments:
             - @controller.helper
