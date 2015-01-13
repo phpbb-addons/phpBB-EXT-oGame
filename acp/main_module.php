@@ -13,7 +13,7 @@ class main_module
 {
 	var $u_action;
 
-	function main($id, $mode)
+	public function main($id, $mode)
 	{
 		global $db, $user, $auth, $template, $cache, $request;
 		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;

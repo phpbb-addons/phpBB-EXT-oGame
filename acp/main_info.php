@@ -11,7 +11,7 @@ namespace un1matr1x\ogame\acp;
 
 class main_info
 {
-	function module()
+	public function module()
 	{
 		return array(
 			'filename'	=> '\un1matr1x\ogame\acp\main_module',
