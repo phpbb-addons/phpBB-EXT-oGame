@@ -31,7 +31,8 @@ class main
 	 * @param \phpbb\template\template	$template
 	 * @param \phpbb\user				$user
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper,
+								\phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->config = $config;
 		$this->helper = $helper;

@@ -18,7 +18,9 @@ class main_info
 			'title'		=> 'ACP_OGAME_TITLE',
 			'version'	=> '0.1.0',
 			'modes'		=> array(
-				'settings'	=> array('title' => 'ACP_OGAME', 'auth' => 'ext_un1matr1x/ogame && acl_a_board', 'cat' => array('ACP_OGAME_TITLE')),
+				'settings'	=> array('title' => 'ACP_OGAME',
+									'auth' => 'ext_un1matr1x/ogame && acl_a_board',
+									'cat' => array('ACP_OGAME_TITLE')),
 			),
 		);
 	}

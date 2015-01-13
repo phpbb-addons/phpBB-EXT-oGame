@@ -13,7 +13,8 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['un1matr1x_ogame_version']) && version_compare($this->config['un1matr1x_ogame_version'], '0.1.0', '>=');
+		return isset($this->config['un1matr1x_ogame_version']) 
+				&& version_compare($this->config['un1matr1x_ogame_version'], '0.1.0', '>=');
 	}
 
 	static public function depends_on()
