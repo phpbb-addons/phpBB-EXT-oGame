@@ -12,7 +12,7 @@ namespace un1matr1x\ogame\tests\functional;
 /**
 * @group functional
 */
-class cr4me_functional_posting_test extends phpbb_functional_test_case
+class cr4me_functional_posting_test extends \phpbb_functional_test_case
 {
 	public function test_post_new_topic_with_cr4me()
 	{
