@@ -54,34 +54,34 @@ class main_listener implements EventSubscriberInterface
 	protected $user;
 
 	/**
-	* Constructor
-	*
-	* @param string									$php_ext
-	* @param Container								$phpbb_container
-	* @param \phpbb\db\driver\driver_interfacer		$db
-	* @param \phpbb\config\config					$config
-	* @param \phpbb\controller\helper				$helper		Controller helper object
-	* @param \phpbb\auth\auth						$auth
-	* @param \phpbb\template						$template	Template object
-	* @param \phpbb\user							$user
-	* @param \phpbb\path_helper						$phpbb_path_helper
-	* @param \phpbb\extension\manager				$phpbb_extension_manager
-	*/
+	 * Constructor
+	 *
+	 * @param string									$php_ext
+	 * @param Container								$phpbb_container
+	 * @param \phpbb\db\driver\driver_interfacer		$db
+	 * @param \phpbb\config\config					$config
+	 * @param \phpbb\controller\helper				$helper		Controller helper object
+	 * @param \phpbb\auth\auth						$auth
+	 * @param \phpbb\template						$template	Template object
+	 * @param \phpbb\user							$user
+	 * @param \phpbb\path_helper						$phpbb_path_helper
+	 * @param \phpbb\extension\manager				$phpbb_extension_manager
+	 */
 	public function __construct($php_ext, Container $phpbb_container, \phpbb\db\driver\driver_interface $db,
 								\phpbb\config\config $config, \phpbb\controller\helper $helper,
 								\phpbb\auth\auth $auth, \phpbb\template\template $template,
 								\phpbb\user $user, \phpbb\path_helper $phpbb_path_helper,
 								\phpbb\extension\manager $phpbb_extension_manager)
 	{
-		$this->phpbb_path_helper		= $phpbb_path_helper;
-		$this->phpbb_extension_manager	= $phpbb_extension_manager;
-		$this->php_ext					= $php_ext;
-		$this->phpbb_container			= $phpbb_container;
-		$this->db						= $db;
+		$this->phpbb_path_helper = $phpbb_path_helper;
+		$this->phpbb_extension_manager = $phpbb_extension_manager;
+		$this->php_ext = $php_ext;
+		$this->phpbb_container = $phpbb_container;
+		$this->db = $db;
 		$this->config					= $config;
 		$this->helper					= $helper;
 		$this->auth						= $auth;
-		$this->template					= $template;
+		$this->template = $template;
 		$this->user						= $user;
 	}
 
@@ -104,7 +104,7 @@ class main_listener implements EventSubscriberInterface
 		$this->phpbb_path_helper->update_web_root_path($this->phpbb_extension_manager->get_extension_path('un1matr1x/ogame', true));
 
 		//Replace CR-Links with nicer Images
-		$search_kb		= array();
+		$search_kb = array();
 		$search_kb[0]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;pw=[a-zA-Z0-9]{6}&amp;lang=[a-z_]{2,11}<#'; //?show= &pw= &lang=
 		$search_kb[1]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;lang=[a-z_]{2,11}&amp;pw=[a-zA-Z0-9]{6}<#'; //?show= &lang= &pw=
 		$search_kb[11]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;lang=[a-z_]{2,11}&amp;pw=<#'; //?show= &lang= &pw=
@@ -114,13 +114,13 @@ class main_listener implements EventSubscriberInterface
 		$search_kb[4]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?lang=[a-z_]{2,11}&amp;show=([0-9]+)&amp;pw=<#'; //?lang= &show= &pw=
 		$search_kb[5]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?lang=[a-z_]{2,11}&amp;pw=[a-zA-Z0-9]{6}&amp;show=([0-9]+)<#'; //?lang= &pw= &show=
 		$search_kb[6]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;pw=[a-zA-Z0-9]{6}<#'; //show= &pw=
-		$search_kb[10]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?lang=[a-z_]{2,11}&amp;show=([0-9]+)<#'; //?lang= &show=
+		$search_kb[10] = '#[^"]http://kb.un1matr1x.de/kb\.php\?lang=[a-z_]{2,11}&amp;show=([0-9]+)<#'; //?lang= &show=
 		$search_kb[7]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;lang=[a-z_]{2,11}<#'; //show= &lang=
 		$search_kb[8]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)&amp;pw=<#'; //?show= &pw=
 		$search_kb[9]	= '#[^"]http://kb.un1matr1x.de/kb\.php\?show=([0-9]+)<#'; //?show=
 
 		$replace_kb = '><span style class="cr4me-link">
-						<img src="' . $ext_path . 'images/cr_no_gd.png">$1</span><';
+						<img src="' . $ext_path.'images/cr_no_gd.png">$1</span><';
 
 		$text = preg_replace($search_kb, $replace_kb, $text);
 
