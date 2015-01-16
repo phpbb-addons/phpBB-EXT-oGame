@@ -14,6 +14,11 @@ namespace un1matr1x\ogame\tests\functional;
 */
 class cr4me_functional_posting_test extends \phpbb_functional_test_case
 {
+	static protected function setup_extensions()
+	{
+		return array('un1matr1x/ogame');
+	}
+
 	public function test_post_new_topic_with_cr4me()
 	{
 		$this->login();
@@ -25,13 +30,9 @@ class cr4me_functional_posting_test extends \phpbb_functional_test_case
 		$this->assertGreaterThan(0, $crawler->filter('.cr4me-link')->count());
 
 		// Test creating a reply with a cr-link
-		$post2 = $this->create_post(2, $post['topic_id'], 'Re: CR4Me Test Topic', 'Some more text with another cr - http://kb.un1matr1x.de/kb.php?lang=da&show=3369&pw=');
+		$post2 = $this->create_post(2, $post['topic_id'], 'Re: CR4Me Test Topic', 'Some more text with another cr - [url]http://kb.un1matr1x.de/kb.php?lang=da&show=3369&pw=[/url]');
 
 		$crawler = self::request('GET', "viewtopic.php?t={$post2['topic_id']}&sid={$this->sid}");
 		$this->assertGreaterThan(1, $crawler->filter('.cr4me-link')->count());
-
-		// Test quoting a message
-		$crawler = self::request('GET', "posting.php?mode=quote&f=2&t={$post2['topic_id']}&p={$post2['post_id']}&sid={$this->sid}");
-		$this->assertGreaterThan(2, $crawler->filter('.cr4me-link')->count());
 	}
 }
