@@ -9,7 +9,15 @@ services:
     un1matr1x.ogame.listener:
         class: un1matr1x\ogame\event\main_listener
         arguments:
+            - %core.php_ext%
+            - @service_container
+            - @dbal.conn
+            - @config
             - @controller.helper
+            - @auth
             - @template
+            - @user
+            - @path_helper
+            - @ext.manager
         tags:
             - { name: event.listener }
