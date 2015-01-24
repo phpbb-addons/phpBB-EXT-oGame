@@ -7,3 +7,13 @@
 	padding: 1px 15px 1px 5px;
 	white-space: nowrap;
 }
+
+.cr4me-image {
+	background-image: url("./images/cr_no_gd.png");
+	background-repeat: no-repeat;
+	padding: 15px;
+	background-size: 100% auto;
+	margin-top: -10px;
+	display: inline-block;
+	background-position: 0 120%;
+}

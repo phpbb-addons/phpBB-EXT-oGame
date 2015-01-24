@@ -12,7 +12,6 @@ namespace un1matr1x\ogame\event;
 /**
 * @ignore
 */
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -29,29 +28,8 @@ class main_listener implements EventSubscriberInterface
 		);
 	}
 
-	/* @var string phpEx */
-	protected $php_ext;
-
-	/* @var Container */
-	protected $phpbb_container;
-
-	/* @var \phpbb\db\driver\driver_interface */
-	protected $db;
-
 	/* @var \phpbb\config\config */
 	protected $config;
-
-	/* @var \phpbb\controller\helper */
-	protected $helper;
-
-	/* @var \phpbb\auth\auth */
-	protected $auth;
-
-	/* @var \phpbb\template\template */
-	protected $template;
-
-	/* @var \phpbb\user */
-	protected $user;
 
 	/**
 	 * Constructor
@@ -61,28 +39,12 @@ class main_listener implements EventSubscriberInterface
 	 * @param \phpbb\db\driver\driver_interfacer	$db
 	 * @param \phpbb\config\config					$config
 	 * @param \phpbb\controller\helper				$helper		Controller helper object
-	 * @param \phpbb\auth\auth						$auth
-	 * @param \phpbb\template						$template	Template object
 	 * @param \phpbb\user							$user
 	 * @param \phpbb\path_helper					$phpbb_path_helper
-	 * @param \phpbb\extension\manager				$phpbb_extension_manager
 	 */
-	public function __construct($php_ext, Container $phpbb_container, \phpbb\db\driver\driver_interface $db,
-								\phpbb\config\config $config, \phpbb\controller\helper $helper,
-								\phpbb\auth\auth $auth, \phpbb\template\template $template,
-								\phpbb\user $user, \phpbb\path_helper $phpbb_path_helper,
-								\phpbb\extension\manager $phpbb_extension_manager)
+	public function __construct(\phpbb\config\config $config)
 	{
-		$this->phpbb_path_helper		= $phpbb_path_helper;
-		$this->phpbb_extension_manager	= $phpbb_extension_manager;
-		$this->php_ext					= $php_ext;
-		$this->phpbb_container			= $phpbb_container;
-		$this->db						= $db;
-		$this->config					= $config;
-		$this->helper					= $helper;
-		$this->auth						= $auth;
-		$this->template					= $template;
-		$this->user						= $user;
+		$this->config = $config;
 	}
 
 	public function load_language_on_setup($event)
@@ -97,7 +59,7 @@ class main_listener implements EventSubscriberInterface
 
 	public function cr_link_with_id($matches)
 	{
-		return '><span style class="cr4me-link"><img src="' . $ext_path.'images/cr_no_gd.png">'.$matches['id'].'</span><';
+		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$matches['id'].'</span><';
 	}
 
 	public function cr4_to_image($event)
@@ -107,7 +69,7 @@ class main_listener implements EventSubscriberInterface
 
 		//Replace CR-Links with nicer Images
 
-		$cr_link_pattern = '/[^\"]http(s)?:\\/\\/(?<url>kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<pa1>lang=[a-z_]{2-11}|show=(?<id>[0-9]+)|pw=([a-zA-Z0-9]{6})?)(&amp;|&)?(?&pa1)?(&amp;|&)?/';
+		$cr_link_pattern = '/[^\"]http(s)?:\\/\\/(?<url>kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<pa1>lang=[a-z_]{2-11}|show=(?<id>[0-9]+)|pw=([a-zA-Z0-9]{6})?)(&amp;|&)?(?&pa1)?(&amp;|&)?</';
 
 		$text = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
 
