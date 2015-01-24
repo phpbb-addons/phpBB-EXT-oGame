@@ -67,7 +67,20 @@ class main_listener implements EventSubscriberInterface
 	*/
 	public function cr_link_with_id($matches)
 	{
-		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$matches['id'].'</span><';
+			$cr_id = (int) 0;
+			if ((isset ($matches['id1'])) && (intval($matches['id1'])<>0))
+			{
+				$cr_id = $matches['id1'];
+			}
+			elseif ((isset ($matches['id2'])) && (intval($matches['id2'])<>0))
+			{
+				$cr_id = $matches['id2'];
+			}
+			elseif ((isset ($matches['id3'])) && (intval($matches['id3'])<>0))
+			{
+				$cr_id = $matches['id3'];
+			}
+			return '><span class="cr4me-link"><span class="cr4me-image"></span>' . $cr_id . '</span><';
 	}
 
 	/**
@@ -84,9 +97,9 @@ class main_listener implements EventSubscriberInterface
 		if ($this->config['un1matr1x_ogame_cr_link'])
 		{
 			$text = $event['text'];
-			$cr_link_pattern = '/[^\"]http(s)?:\\/\\/(?<url>kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?';
-			$cr_link_pattern .= '(?<pa1>lang=[a-z_]{2-11}|show=(?<id>[0-9]+)|pw=([a-zA-Z0-9]{6})?)';
-			$cr_link_pattern .= '(&amp;|&)?(?&pa1)?(&amp;|&)?</';
+			$cr_link_pattern = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
+			$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
+			$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
 			$text = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
 			$event['text'] = $text;
 		}
