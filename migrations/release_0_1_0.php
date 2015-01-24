@@ -17,7 +17,7 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 				&& version_compare($this->config['un1matr1x_ogame_version'], '0.1.0', '>=');
 	}
 
-	static public function depends_on()
+	public static function depends_on()
 	{
 		return array('\phpbb\db\migration\data\v310\alpha2');
 	}

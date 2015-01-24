@@ -20,7 +20,7 @@ class main_module
 
 		$user->add_lang('acp/common');
 		$user->add_lang_ext('un1matr1x/ogame', 'common');
-		$this->tpl_name = 'un1matr1x_ogame_body';
+		$this->tpl_name   = 'un1matr1x_ogame_body';
 		$this->page_title = $user->lang('ACP_OGAME_TITLE');
 		add_form_key('un1matr1x/ogame');
 

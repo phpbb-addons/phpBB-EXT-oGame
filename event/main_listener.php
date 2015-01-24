@@ -19,7 +19,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class main_listener implements EventSubscriberInterface
 {
-	static public function getSubscribedEvents()
+	public static function getSubscribedEvents()
 	{
 		return array(
 			'core.user_setup'							=> 'load_language_on_setup',
@@ -50,8 +50,8 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function load_language_on_setup($event)
 	{
-		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = array(
+		$lang_set_ext          = $event['lang_set_ext'];
+		$lang_set_ext[]        = array(
 			'ext_name' => 'un1matr1x/ogame',
 			'lang_set' => 'common',
 		);
@@ -59,15 +59,16 @@ class main_listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Replaces the 
+	 * Identify the show-parameter of the url-query and add this to the
+	 * callback output.
 	 *
 	 * @param	array	id or name of capturing group as key
-	 * @return	callback for cr4_to_image
+	 * @return	string	callback for cr4_to_image
 	 * @access	public
 	 */
 	public function cr_link_with_id($matches)
 	{
-		$i = $cr_id = (int) 0;
+		$i = $cr_id = 0;
 		while ($i <= 2)
 		{
 			if ((isset ($matches['id'.$i])) && (!empty($matches['id'.$i])))
@@ -77,7 +78,7 @@ class main_listener implements EventSubscriberInterface
 			$i++;
 		}
 
-		return '><span class="cr4me-link"><span class="cr4me-image"></span>' . $cr_id . '</span><';
+		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
 	}
 
 	/**
@@ -93,12 +94,12 @@ class main_listener implements EventSubscriberInterface
 	{
 		if ($this->config['un1matr1x_ogame_cr_link'])
 		{
-			$text = $event['text'];
-			$cr_link_pattern = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
+			$text             = $event['text'];
+			$cr_link_pattern  = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
 			$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
 			$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
-			$text = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
-			$event['text'] = $text;
+			$text             = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
+			$event['text']    = $text;
 		}
 	}
 }

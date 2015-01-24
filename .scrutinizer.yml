@@ -1,10 +1,245 @@
 tools:
-    php_sim: true
-    php_pdepend: true
-    php_analyzer: true
-#   external_code_coverage:
-#       timeout: 900    # Timeout in seconds.
-
+    php_cs_fixer:
+        enabled: true
+        config:
+            fixers:
+                indentation: false
+                linefeed: true
+                trailing_spaces: true
+                unused_use: false
+                phpdoc_params: false
+                visibility: false
+                return: false
+                short_tag: true
+                braces: false
+                include: false
+                php_closing_tag: true
+                extra_empty_lines: true
+                controls_spaces: false
+                elseif: false
+                eof_ending: true
+            level: custom
+        extensions:
+            - php
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+        path_configs: {  }
+    php_code_sniffer:
+        enabled: true
+        config:
+            sniffs:
+                psr1: { classes: { class_declaration_sniff: true }, files: { side_effects_sniff: true } }
+                generic: { code_analysis: { unused_function_parameter_sniff: false, for_loop_with_test_function_call_sniff: true, unconditional_if_statement_sniff: true, empty_statement_sniff: true, unnecessary_final_modifier_sniff: true, for_loop_should_be_while_loop_sniff: true, useless_overriding_method_sniff: true, jumbled_incrementer_sniff: true }, classes: { duplicate_class_name_sniff: true }, white_space: { disallow_tab_indent_sniff: false, disallow_space_indent_sniff: true }, php: { disallow_short_open_tag_sniff: true, sapi_usage_sniff: false, no_silenced_errors_sniff: true, deprecated_functions_sniff: false, upper_case_constant_sniff: true, closing_php_tag_sniff: false, forbidden_functions_sniff: false, lower_case_constant_sniff: true, character_before_php_opening_tag_sniff: true, lower_case_keyword_sniff: true }, formatting: { multiple_statement_alignment_sniff: true, no_space_after_cast_sniff: true, space_after_cast_sniff: true, disallow_multiple_statements_sniff: true }, functions: { function_call_argument_spacing_sniff: true, opening_function_brace_kernighan_ritchie_sniff: false, opening_function_brace_bsd_allman_sniff: true, call_time_pass_by_reference_sniff: false }, files: { one_interface_per_file_sniff: false, end_file_newline_sniff: true, inline_html_sniff: true, byte_order_mark_sniff: true, one_class_per_file_sniff: false, line_endings_sniff: true, line_length_sniff: { max_length: '120' } }, version_control: { subversion_properties_sniff: false }, commenting: { fixme_sniff: true, todo_sniff: true }, control_structures: { inline_control_structure_sniff: true }, strings: { unnecessary_string_concat_sniff: true }, naming_conventions: { camel_caps_function_name_sniff: false, constructor_name_sniff: true, upper_case_constant_name_sniff: true }, metrics: { cyclomatic_complexity_sniff: false, nesting_level_sniff: false } }
+                zend: { debug: { code_analyzer_sniff: false }, files: { closing_tag_sniff: true }, naming_conventions: { valid_variable_name_sniff: false } }
+                squiz: { scope: { static_this_usage_sniff: false, method_scope_sniff: true, member_var_scope_sniff: true }, code_analysis: { empty_statement_sniff: false }, classes: { lowercase_class_keywords_sniff: false, valid_class_name_sniff: false, class_file_name_sniff: false, self_member_reference_sniff: true, class_declaration_sniff: false }, arrays: { array_bracket_spacing_sniff: false, array_declaration_sniff: false }, objects: { object_instantiation_sniff: false }, white_space: { logical_operator_spacing_sniff: true, language_construct_spacing_sniff: false, operator_spacing_sniff: true, control_structure_spacing_sniff: false, function_opening_brace_space_sniff: false, function_spacing_sniff: false, superfluous_whitespace_sniff: false, member_var_spacing_sniff: false, scope_closing_brace_sniff: false, scope_keyword_spacing_sniff: false, function_closing_brace_space_sniff: false, semicolon_spacing_sniff: true, cast_spacing_sniff: true, object_operator_spacing_sniff: true }, php: { disallow_comparison_assignment_sniff: false, disallow_size_functions_in_loops_sniff: true, heredoc_sniff: false, disallow_ob_end_flush_sniff: false, inner_functions_sniff: false, forbidden_functions_sniff: true, eval_sniff: false, lowercase_p_h_p_functions_sniff: true, discouraged_functions_sniff: false, embedded_php_sniff: false, commented_out_code_sniff: true, disallow_inline_if_sniff: false, disallow_multiple_assignments_sniff: false, global_keyword_sniff: true, non_executable_code_sniff: false }, formatting: { operator_bracket_sniff: false }, functions: { lowercase_function_keywords_sniff: false, global_function_sniff: false, function_duplicate_argument_sniff: true, multi_line_function_declaration_sniff: false, function_declaration_argument_spacing_sniff: false, function_declaration_sniff: false }, files: { file_extension_sniff: false }, commenting: { inline_comment_sniff: false, post_statement_comment_sniff: false, class_comment_sniff: false, doc_comment_alignment_sniff: false, block_comment_sniff: false, function_comment_sniff: false, function_comment_throw_tag_sniff: false, variable_comment_sniff: false, empty_catch_comment_sniff: false, file_comment_sniff: false, long_condition_closing_comment_sniff: false, closing_declaration_comment_sniff: false }, control_structures: { control_signature_sniff: false, lowercase_declaration_sniff: false, inline_if_declaration_sniff: false, for_each_loop_declaration_sniff: false, for_loop_declaration_sniff: false, switch_declaration_sniff: false, else_if_declaration_sniff: true }, strings: { echoed_strings_sniff: false, concatenation_spacing_sniff: true, double_quote_usage_sniff: true }, naming_conventions: { valid_function_name_sniff: false, valid_variable_name_sniff: false, constant_case_sniff: false }, operators: { increment_decrement_usage_sniff: true, valid_logical_operators_sniff: true, comparison_operator_usage_sniff: false } }
+                my_source: { php: { return_function_value_sniff: false, eval_object_factory_sniff: false }, debug: { debug_code_sniff: false }, commenting: { function_comment_sniff: false } }
+                psr2: { classes: { property_declaration_sniff: true, class_declaration_sniff: true }, methods: { method_declaration_sniff: true }, namespaces: { namespace_declaration_sniff: true, use_declaration_sniff: true }, files: { end_file_newline_sniff: true }, control_structures: { control_structure_spacing_sniff: true, switch_declaration_sniff: true, else_if_declaration_sniff: false } }
+                pear: { classes: { class_declaration_sniff: false }, white_space: { object_operator_indent_sniff: false, scope_indent_sniff: false, scope_closing_brace_sniff: false }, formatting: { multi_line_assignment_sniff: false }, functions: { function_call_signature_sniff: false, function_declaration_sniff: false, valid_default_value_sniff: true }, files: { including_file_sniff: false }, commenting: { inline_comment_sniff: true, class_comment_sniff: false, function_comment_sniff: false, file_comment_sniff: false }, control_structures: { control_signature_sniff: false, multi_line_condition_sniff: false }, naming_conventions: { valid_function_name_sniff: false, valid_variable_name_sniff: false, valid_class_name_sniff: false } }
+                wordpress: { arrays: { array_declaration_sniff: false }, classes: { valid_class_name_sniff: false }, files: { file_name_sniff: false }, formatting: { multiple_statement_alignment_sniff: false }, functions: { function_call_signature_sniff: false, function_declaration_argument_spacing_sniff: false }, naming_conventions: { valid_function_name_sniff: false }, objects: { object_instantiation_sniff: false }, php: { discouraged_functions_sniff: false }, strings: { double_quote_usage_sniff: false }, white_space: { control_structure_spacing_sniff: false, operator_spacing_sniff: false, php_indent_sniff: false }, xss: { escape_output_sniff: false } }
+            ruleset: null
+            standard: custom
+            tab_width: 0
+            encoding: utf8
+        extensions:
+            - php
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+        path_configs: {  }
+    php_analyzer:
+        enabled: true
+        config:
+            parameter_reference_check:
+                enabled: true
+            checkstyle:
+                no_trailing_whitespace: true
+                naming: { enabled: false, local_variable: '^[a-z][a-zA-Z0-9]*$', abstract_class_name: ^Abstract|Factory$, utility_class_name: 'Utils?$', constant_name: '^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$', property_name: '^[a-z][a-zA-Z0-9]*$', method_name: '^(?:[a-z]|__)[a-zA-Z0-9]*$', parameter_name: '^[a-z][a-zA-Z0-9]*$', interface_name: '^[A-Z][a-zA-Z0-9]*Interface$', type_name: '^[A-Z][a-zA-Z0-9]*$', exception_name: '^[A-Z][a-zA-Z0-9]*Exception$', isser_method_name: '^(?:is|has|should|may|supports)' }
+                enabled: true
+            unreachable_code:
+                enabled: true
+            check_access_control:
+                enabled: true
+            typo_checks:
+                enabled: false
+            check_variables:
+                enabled: true
+            check_calls:
+                method_call_validity: true
+                too_many_arguments: true
+                missing_argument: true
+                enabled: true
+                argument_type_checks: lenient
+            check_debug_code:
+                enabled: true
+            check_property_assignments:
+                enabled: true
+            method_contract_checks:
+                verify_interface_like_constraints: false
+                verify_documented_constraints: false
+                verify_parent_constraints: false
+                enabled: false
+            check_request_data_usage:
+                enabled: false
+            suspicious_code:
+                overriding_parameter: false
+                overriding_closure_use: true
+                parameter_closure_use_conflict: true
+                parameter_multiple_times: true
+                non_existent_class_in_instanceof_check: false
+                non_existent_class_in_catch_clause: true
+                assignment_of_null_return: true
+                non_commented_switch_fallthrough: true
+                non_commented_empty_catch_block: true
+                overriding_private_members: true
+                use_statement_alias_conflict: true
+                precedence_in_condition_assignment: true
+                return_in_constructor: false
+                enabled: true
+            dead_assignments:
+                enabled: true
+            deadlock_detection:
+                enabled: true
+            verify_php_doc_comments:
+                parsable: false
+                traits_are_not_type_hinted: true
+                parameters: true
+                return: true
+                suggest_more_specific_types: true
+                ask_for_return_if_not_inferrable: true
+                enabled: true
+                ask_for_param_type_annotation: true
+            loops_must_use_braces:
+                enabled: false
+            check_usage_context:
+                foreach: { value_as_reference: true, traversable: true }
+                enabled: true
+            simplify_boolean_return:
+                enabled: true
+            phpunit_checks:
+                enabled: true
+            reflection_checks:
+                enabled: false
+            precedence_checks:
+                enabled: true
+                assignment_in_condition: true
+                comparison_of_bit_result: true
+            basic_semantic_checks:
+                property_on_interface: true
+                missing_abstract_methods: true
+                enabled: true
+            unused_code:
+                methods: true
+                parameters: true
+                enabled: true
+            deprecation_checks:
+                enabled: true
+            useless_function_calls:
+                enabled: true
+            metrics_lack_of_cohesion_methods:
+                enabled: true
+            metrics_coupling:
+                enabled: true
+                stable_code: { namespace_prefixes: {  }, classes: {  } }
+            doctrine_parameter_binding:
+                enabled: true
+            doctrine_entity_manager_injection:
+                enabled: true
+            symfony_request_injection:
+                enabled: true
+            doc_comment_fixes:
+                enabled: true
+            reflection_fixes:
+                enabled: false
+            use_statement_fixes:
+                remove_unused: true
+                preserve_multiple: true
+                preserve_blanklines: true
+                order_alphabetically: true
+                enabled: true
+        extensions:
+            - php
+        dependency_paths: {  }
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+        path_configs: {  }
+    php_mess_detector:
+        enabled: true
+        config:
+            code_size_rules:
+                cyclomatic_complexity: false
+                npath_complexity: false
+                excessive_method_length: false
+                excessive_class_length: false
+                excessive_parameter_list: false
+                excessive_public_count: false
+                too_many_fields: false
+                too_many_methods: false
+                excessive_class_complexity: false
+            design_rules:
+                exit_expression: true
+                eval_expression: true
+                goto_statement: true
+                number_of_class_children: false
+                depth_of_inheritance: false
+                coupling_between_objects: false
+            unused_code_rules:
+                unused_private_field: true
+                unused_local_variable: false
+                unused_private_method: false
+                unused_formal_parameter: false
+            naming_rules:
+                constructor_conflict: false
+                constant_naming: false
+                boolean_method_name: false
+                short_variable: { minimum: '3' }
+                short_method: { minimum: '5' }
+                long_variable: { maximum: '20' }
+            controversial_rules:
+                superglobals: true
+                camel_case_class_name: false
+                camel_case_property_name: false
+                camel_case_method_name: false
+                camel_case_parameter_name: false
+                camel_case_variable_name: false
+            ruleset: null
+        extensions:
+            - php
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+        path_configs: {  }
+    sensiolabs_security_checker:
+        enabled: true
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+    php_sim:
+        enabled: true
+        min_mass: 16
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+    php_pdepend:
+        enabled: true
+        configuration_file: null
+        suffixes:
+            - php
+        excluded_dirs: {  }
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+    php_changetracking:
+        enabled: true
+        bug_patterns:
+            - '\bfix(?:es|ed)?\b'
+        feature_patterns:
+            - '\badd(?:s|ed)?\b'
+            - '\bimplement(?:s|ed)?\b'
+        filter:
+            paths: {  }
+            excluded_paths: {  }
 coding_style:
     php:
         indentation:
@@ -102,3 +337,147 @@ coding_style:
                 opening: new-line
                 catch_on_new_line: true
                 finally_on_new_line: true
+filter:
+    paths: {  }
+    excluded_paths:
+        - tests/*
+build_failure_conditions: {  }
+application:
+    type: none
+
+checks:
+    php:
+        verify_property_names: true
+        verify_argument_usable_as_reference: true
+        verify_access_scope_valid: true
+        variable_existence: true
+        useless_calls: true
+        use_statement_alias_conflict: true
+        use_self_instead_of_fqcn: true
+        uppercase_constants: true
+        unused_variables: true
+        unused_properties: true
+        unused_parameters: true
+        unused_methods: true
+        unreachable_code: true
+        too_many_arguments: true
+        symfony_request_injection: true
+        switch_fallthrough_commented: true
+        sql_injection_vulnerabilities: true
+        spacing_of_function_arguments: true
+        spacing_around_non_conditional_operators: true
+        spacing_around_conditional_operators: true
+        space_after_cast: true
+        single_namespace_per_use: true
+        simplify_boolean_return: true
+        side_effects_or_types: true
+        security_vulnerabilities: true
+        return_doc_comments: true
+        return_doc_comment_if_not_inferrable: true
+        require_scope_for_properties: true
+        require_scope_for_methods: true
+        require_php_tag_first: true
+        require_braces_around_control_structures: true
+        remove_trailing_whitespace: true
+        remove_php_closing_tag: true
+        remove_extra_empty_lines: true
+        psr2_switch_declaration: true
+        psr2_control_structure_declaration: true
+        psr2_class_declaration: true
+        property_assignments: true
+        prefer_while_loop_over_for_loop: true
+        prefer_unix_line_ending: true
+        precedence_mistakes: true
+        precedence_in_conditions: true
+        phpunit_assertions: true
+        php5_style_constructor: true
+        parameter_non_unique: true
+        parameter_doc_comments: true
+        param_doc_comment_if_not_inferrable: true
+        overriding_private_members: true
+        optional_parameters_at_the_end: true
+        one_class_per_file: true
+        non_commented_empty_catch_block: true
+        no_unnecessary_if: true
+        no_unnecessary_function_call_in_for_loop: true
+        no_unnecessary_final_modifier: true
+        no_underscore_prefix_in_properties: true
+        no_underscore_prefix_in_methods: true
+        no_trait_type_hints: true
+        no_trailing_whitespace: true
+        no_space_inside_cast_operator: true
+        no_space_between_concatenation_operator: true
+        no_space_before_semicolon: true
+        no_space_around_object_operator: true
+        no_space_after_cast: true
+        no_short_variable_names:
+            minimum: '3'
+        no_short_open_tag: true
+        no_short_method_names:
+            minimum: '5'
+        no_property_on_interface: true
+        no_non_implemented_abstract_methods: true
+        no_mixed_inline_html: true
+        no_long_variable_names:
+            maximum: '20'
+        no_goto: true
+        no_global_keyword: true
+        no_exit: true
+        no_eval: true
+        no_error_suppression: true
+        no_empty_statements: true
+        no_elseif_statements: true
+        no_duplicate_arguments: true
+        no_debug_code: true
+        no_commented_out_code: true
+        newline_at_end_of_file: true
+        more_specific_types_in_doc_comments: true
+        missing_arguments: true
+        method_calls_on_non_object: true
+        lowercase_php_keywords: true
+        lowercase_basic_constants: true
+        line_length:
+            max_length: '120'
+        instanceof_class_exists: true
+        function_body_start_on_new_line: true
+        foreach_usable_as_reference: true
+        foreach_traversable: true
+        fix_use_statements:
+            remove_unused: true
+            preserve_multiple: true
+            preserve_blanklines: true
+            order_alphabetically: true
+        fix_php_opening_tag: true
+        fix_linefeed: true
+        fix_line_ending: true
+        fix_doc_comments: true
+        ensure_lower_case_builtin_functions: true
+        encourage_single_quotes: true
+        encourage_postdec_operator: true
+        duplication: true
+        deprecated_code_usage: true
+        deadlock_detection_in_loops: true
+        code_rating: true
+        closure_use_not_conflicting: true
+        closure_use_modifiable: true
+        catch_class_exists: true
+        blank_line_after_namespace_declaration: true
+        avoid_useless_overridden_methods: true
+        avoid_usage_of_logical_operators: true
+        avoid_unnecessary_concatenation: true
+        avoid_todo_comments: true
+        avoid_superglobals: true
+        avoid_space_indentation: true
+        avoid_perl_style_comments: true
+        avoid_multiple_statements_on_same_line: true
+        avoid_length_functions_in_loops: true
+        avoid_fixme_comments: true
+        avoid_duplicate_types: true
+        avoid_entity_manager_injection: true
+        avoid_corrupting_byteorder_marks: true
+        avoid_conflicting_incrementers: true
+        avoid_closing_tag: true
+        avoid_aliased_php_functions: true
+        assignment_of_null_return: true
+        argument_type_checks: true
+        align_assignments: true
