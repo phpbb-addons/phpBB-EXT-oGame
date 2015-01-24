@@ -67,20 +67,17 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function cr_link_with_id($matches)
 	{
-			$cr_id = (int) 0;
-			if ((isset ($matches['id1'])) && (intval($matches['id1']) <> 0))
+		$i = $cr_id = (int) 0;
+		while ($i <= 2)
+		{
+			if ((isset ($matches['id'.$i])) && (!empty($matches['id'.$i])))
 			{
-				$cr_id = $matches['id1'];
+				$cr_id = $matches['id'.$i];
 			}
-			else if ((isset ($matches['id2'])) && (intval($matches['id2']) <> 0))
-			{
-				$cr_id = $matches['id2'];
-			}
-			else if ((isset ($matches['id3'])) && (intval($matches['id3']) <> 0))
-			{
-				$cr_id = $matches['id3'];
-			}
-			return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
+			$i++;
+		}
+
+		return '><span class="cr4me-link"><span class="cr4me-image"></span>' . $cr_id . '</span><';
 	}
 
 	/**
