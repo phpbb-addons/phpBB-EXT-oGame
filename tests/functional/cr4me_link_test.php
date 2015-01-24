@@ -36,6 +36,6 @@ class cr4me_functional_posting_test extends \phpbb_functional_test_case
 				'Some more text with another cr - [url]http://kb.un1matr1x.de/kb.php?lang=da&show=3369&pw=[/url]');
 
 		$crawler = self::request('GET', "viewtopic.php?t={$post2['topic_id']}&sid={$this->sid}");
-		$this->assertGreaterThan(1, $crawler->filter('.cr4me-link')->count());
+		$this->assertGreaterThan(1, $crawler->filter('.cr4me-image')->count());
 	}
 }

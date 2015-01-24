@@ -72,11 +72,11 @@ class main_listener implements EventSubscriberInterface
 			{
 				$cr_id = $matches['id1'];
 			}
-			elseif ((isset ($matches['id2'])) && (intval($matches['id2'])<>0))
+			else if ((isset ($matches['id2'])) && (intval($matches['id2'])<>0))
 			{
 				$cr_id = $matches['id2'];
 			}
-			elseif ((isset ($matches['id3'])) && (intval($matches['id3'])<>0))
+			else if ((isset ($matches['id3'])) && (intval($matches['id3'])<>0))
 			{
 				$cr_id = $matches['id3'];
 			}
@@ -91,7 +91,7 @@ class main_listener implements EventSubscriberInterface
 	* @param	object		$event	The event object
 	* @return	null
 	* @access	public
-	*/ 
+	*/
 	public function cr4_to_image($event)
 	{
 		if ($this->config['un1matr1x_ogame_cr_link'])
