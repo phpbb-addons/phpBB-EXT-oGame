@@ -34,19 +34,20 @@ class main_listener implements EventSubscriberInterface
 	/**
 	 * Constructor
 	 *
-	 * @param string								$php_ext
-	 * @param Container								$phpbb_container
-	 * @param \phpbb\db\driver\driver_interfacer	$db
 	 * @param \phpbb\config\config					$config
-	 * @param \phpbb\controller\helper				$helper		Controller helper object
-	 * @param \phpbb\user							$user
-	 * @param \phpbb\path_helper					$phpbb_path_helper
 	 */
 	public function __construct(\phpbb\config\config $config)
 	{
 		$this->config = $config;
 	}
 
+	/**
+	* Load common language data
+	*
+	* @param	object	$event
+	* @return	null
+	* @access	public
+	*/
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
@@ -57,22 +58,37 @@ class main_listener implements EventSubscriberInterface
 		$event['lang_set_ext'] = $lang_set_ext;
 	}
 
+	/**
+	* Replaces the 
+	*
+	* @param	array	id or name of capturing group as key
+	* @return	callback for cr4_to_image
+	* @access	public
+	*/
 	public function cr_link_with_id($matches)
 	{
 		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$matches['id'].'</span><';
 	}
 
+	/**
+	* Function to replace cr4.me text links of with an image and a blue bar background
+	* NB: only the output to the visitors user agent is altered, the data in the
+	* database is unchanged.
+	*
+	* @param	object		$event	The event object
+	* @return	null
+	* @access	public
+	*/ 
 	public function cr4_to_image($event)
 	{
-
-		$text = $event['text'];
-
-		//Replace CR-Links with nicer Images
-
-		$cr_link_pattern = '/[^\"]http(s)?:\\/\\/(?<url>kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<pa1>lang=[a-z_]{2-11}|show=(?<id>[0-9]+)|pw=([a-zA-Z0-9]{6})?)(&amp;|&)?(?&pa1)?(&amp;|&)?</';
-
-		$text = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
-
-		$event['text'] = $text;
+		if ($this->config['un1matr1x_ogame_cr_link'])
+		{
+			$text = $event['text'];
+			$cr_link_pattern = '/[^\"]http(s)?:\\/\\/(?<url>kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?';
+			$cr_link_pattern .= '(?<pa1>lang=[a-z_]{2-11}|show=(?<id>[0-9]+)|pw=([a-zA-Z0-9]{6})?)';
+			$cr_link_pattern .= '(&amp;|&)?(?&pa1)?(&amp;|&)?</';
+			$text = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
+			$event['text'] = $text;
+		}
 	}
 }
