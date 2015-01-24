@@ -42,12 +42,12 @@ class main_listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Load common language data
-	*
-	* @param	object	$event
-	* @return	null
-	* @access	public
-	*/
+	 * Load common language data
+	 *
+	 * @param	object	$event
+	 * @return	null
+	 * @access	public
+	 */
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
@@ -59,39 +59,39 @@ class main_listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Replaces the 
-	*
-	* @param	array	id or name of capturing group as key
-	* @return	callback for cr4_to_image
-	* @access	public
-	*/
+	 * Replaces the 
+	 *
+	 * @param	array	id or name of capturing group as key
+	 * @return	callback for cr4_to_image
+	 * @access	public
+	 */
 	public function cr_link_with_id($matches)
 	{
 			$cr_id = (int) 0;
-			if ((isset ($matches['id1'])) && (intval($matches['id1'])<>0))
+			if ((isset ($matches['id1'])) && (intval($matches['id1']) <> 0))
 			{
 				$cr_id = $matches['id1'];
 			}
-			else if ((isset ($matches['id2'])) && (intval($matches['id2'])<>0))
+			else if ((isset ($matches['id2'])) && (intval($matches['id2']) <> 0))
 			{
 				$cr_id = $matches['id2'];
 			}
-			else if ((isset ($matches['id3'])) && (intval($matches['id3'])<>0))
+			else if ((isset ($matches['id3'])) && (intval($matches['id3']) <> 0))
 			{
 				$cr_id = $matches['id3'];
 			}
-			return '><span class="cr4me-link"><span class="cr4me-image"></span>' . $cr_id . '</span><';
+			return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
 	}
 
 	/**
-	* Function to replace cr4.me text links of with an image and a blue bar background
-	* NB: only the output to the visitors user agent is altered, the data in the
-	* database is unchanged.
-	*
-	* @param	object		$event	The event object
-	* @return	null
-	* @access	public
-	*/
+	 * Function to replace cr4.me text links of with an image and a blue bar background
+	 * NB: only the output to the visitors user agent is altered, the data in the
+	 * database is unchanged.
+	 *
+	 * @param	object		$event	The event object
+	 * @return	null
+	 * @access	public
+	 */
 	public function cr4_to_image($event)
 	{
 		if ($this->config['un1matr1x_ogame_cr_link'])
