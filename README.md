@@ -3,8 +3,7 @@
 
 # phpBB 3.1 oGame Extension
 
-This is an Extension for [phpBB 3.1] (https://www.phpbb.com/) about [oGame]
-(http://gameforge.com/)
+This is an Extension for [phpBB 3.1] (https://www.phpbb.com/) about [oGame](http://gameforge.com/)
 
 
 ## Description
@@ -19,14 +18,17 @@ DO NOT INSTALL THIS EXTENSION BY NOW!
 ## Collaborate
 
 * Create a issue in the [tracker](https://github.com/Un1matr1x/phpBB-EXT-oGame/issues)
-* Note the restrictions for [branch names](https://wiki.phpbb.com/Git#Branch_Names)
-and [commit messages](https://wiki.phpbb.com/Git#Commit_Messages) are similar 
-to phpBB3, but might not be interpreted less hard 
+* Note the restrictions for [branch names](https://wiki.phpbb.com/Git#Branch_Names) and [commit messages]
+(https://wiki.phpbb.com/Git#Commit_Messages) are similar to phpBB3, but might not be interpreted less hard
 * Submit a [pull-request](https://github.com/Un1matr1x/phpBB-EXT-oGame/pulls)
 
 ## License
 
 [GPLv2](LICENSE)
+
+## Changelog
+
+[Changelog](CHANGELOG.md)
 
 ## Badges
 
