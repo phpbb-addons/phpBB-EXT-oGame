@@ -11,7 +11,7 @@ namespace un1matr1x\ogame\acp;
 
 class main_module
 {
-	var $u_action;
+	public $u_action;
 
 	public function main($id, $mode)
 	{
