@@ -1,0 +1,7 @@
+services:
+    un1matr1x.ogame.listener:
+        class: un1matr1x\ogame\event\main_listener
+        arguments:
+            - @config
+        tags:
+            - { name: event.listener }

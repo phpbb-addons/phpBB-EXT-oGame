@@ -1,0 +1,21 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_SETTINGS}</h1>
+
+<form id="acp_board" method="post" action="{U_ACTION}">
+	<fieldset>
+		<dl>
+			<dt><label for="un1matr1x_ogame_cr_link">{L_ACP_UN1MATR1X_OGAME_CR_LINK}</label></dt>
+			<dd><input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="1" <!-- IF UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
+				<input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="0" <!-- IF not UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->
