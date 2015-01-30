@@ -49,6 +49,14 @@ DO NOT INSTALL THIS EXTENSION BY NOW!
 (https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f/mini.png)]
 (https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f)
 &nbsp;&bull;&nbsp;
+[![Average time to resolve an issue]
+(http://isitmaintained.com/badge/resolution/Un1matr1x/phpBB-EXT-oGame.svg)]
+(http://isitmaintained.com/project/Un1matr1x/phpBB-EXT-oGame "Average time to resolve an issue")
+&nbsp;&bull;&nbsp;
+[![Percentage of issues still open]
+(http://isitmaintained.com/badge/open/Un1matr1x/phpBB-EXT-oGame.svg)]
+(http://isitmaintained.com/project/Un1matr1x/phpBB-EXT-oGame "Percentage of issues still open")
+&nbsp;&bull;&nbsp;
 [![Dependency Status]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c/badge.svg?style=flat)]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c#tab-settings)
