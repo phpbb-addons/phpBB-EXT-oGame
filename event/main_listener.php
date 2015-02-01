@@ -2,9 +2,10 @@
 /**
 *
 * @package phpBB Extension - oGame
+*
 * @copyright (c) 2015 un1matr1x
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
-*
+* @author Falk Seidel (un1matr1x)
 */
 
 namespace un1matr1x\ogame\event;
@@ -68,14 +69,14 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function cr_link_with_id($matches)
 	{
-		$i = $cr_id = 0;
-		while ($i <= 2)
+		$counter = $cr_id = 0;
+		while ($counter <= 2)
 		{
-			if ((isset ($matches['id'.$i])) && (!empty($matches['id'.$i])))
+			if ((isset ($matches['id'.$counter])) && (!empty($matches['id'.$counter])))
 			{
-				$cr_id = $matches['id'.$i];
+				$cr_id = $matches['id'.$counter];
 			}
-			$i++;
+			$counter++;
 		}
 
 		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
