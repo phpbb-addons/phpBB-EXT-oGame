@@ -19,10 +19,13 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 		return array('un1matr1x/ogame');
 	}
 
+	/**
+	 * @param boolean $status
+	 */
 	protected function set_beautification_enable($db, $status)
 	{
 		$sql = "UPDATE phpbb_config
-			SET config_value = '" . (($status) ? '1' : '0') . "'
+			SET config_value = '" . (($status) ? '1' : '0')."'
 			WHERE config_name = 'un1matr1x_ogame_cr_link'";
 		$db->sql_query($sql);
 		$this->purge_cache();
@@ -42,9 +45,9 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 		$this->logout();
 	}
 
-    /**
-     * @depends test_cr4me_beautification
-     */
+	/**
+	 * @depends test_cr4me_beautification
+	 */
 	public function test_kbun1matr1x_beautification($post)
 	{
 		$this->login();
@@ -58,9 +61,9 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 		$this->logout();
 	}
 
-    /**
-     * @depends test_kbun1matr1x_beautification
-     */
+	/**
+	 * @depends test_kbun1matr1x_beautification
+	 */
 	public function test_without_beautification($post)
 	{
 		$db = $this->get_db();
