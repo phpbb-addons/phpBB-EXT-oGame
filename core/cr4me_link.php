@@ -28,8 +28,8 @@ class cr4me_link
 	 * Identify the show-parameter of the url-query and add this to the
 	 * callback output.
 	 *
-	 * @param	array	id or name of capturing group as key
-	 * @return	string|null	callback for cr4_to_image
+	 * @param	array		id or name of capturing group as key
+	 * @return	string		callback for cr4_to_image
 	 * @access	public
 	 */
 	public function cr_link_with_id($matches)
@@ -52,8 +52,8 @@ class cr4me_link
 	 * NB: only the output to the visitors user agent is altered, the data in the
 	 * database is unchanged.
 	 *
-	 * @param	string	$text	the original text
-	 * @return	string	$text	the text with the replaced cr4me-links
+	 * @param	string		$text	the original text
+	 * @return	string|null	$text	the text with the replaced cr4me-links
 	 * @access	public
 	 */
 	public function cr4_to_image($text)
