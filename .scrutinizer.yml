@@ -339,8 +339,7 @@ coding_style:
                 finally_on_new_line: true
 filter:
     paths: {  }
-    excluded_paths:
-        - tests/*
+    excluded_paths: {  }
 build_failure_conditions: {  }
 application:
     type: none
