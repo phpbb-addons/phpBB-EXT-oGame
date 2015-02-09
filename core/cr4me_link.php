@@ -29,7 +29,7 @@ class cr4me_link
 	 * callback output.
 	 *
 	 * @param	array	id or name of capturing group as key
-	 * @return	string|null	callback for cr4_to_image
+	 * @return	string	callback for cr4_to_image
 	 * @access	public
 	 */
 	public function cr_link_with_id($matches)
