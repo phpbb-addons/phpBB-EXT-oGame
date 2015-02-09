@@ -13,10 +13,9 @@ class main_module
 {
 	public $u_action;
 
-	public function main($id, $mode)
+	public function main()
 	{
-		global $db, $user, $auth, $template, $cache, $request;
-		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
+		global $user, $template, $request, $config;
 
 		$user->add_lang('acp/common');
 		$user->add_lang_ext('un1matr1x/ogame', 'common');

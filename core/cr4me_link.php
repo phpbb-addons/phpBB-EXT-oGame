@@ -29,19 +29,19 @@ class cr4me_link
 	 * callback output.
 	 *
 	 * @param	array	id or name of capturing group as key
-	 * @return	string	callback for cr4_to_image
+	 * @return	string|null	callback for cr4_to_image
 	 * @access	public
 	 */
 	public function cr_link_with_id($matches)
 	{
-		$i = $cr_id = 0;
-		while ($i <= 2)
+		$counter = $cr_id = 0;
+		while ($counter <= 2)
 		{
-			if ((isset ($matches['id'.$i])) && (!empty($matches['id'.$i])))
+			if ((isset ($matches['id'.$counter])) && (!empty($matches['id'.$counter])))
 			{
-				$cr_id = $matches['id'.$i];
+				$cr_id = $matches['id'.$counter];
 			}
-			$i++;
+			$counter++;
 		}
 
 		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
@@ -64,7 +64,7 @@ class cr4me_link
 			$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
 			$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
 			$text             = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
-			
+
 			return $text;
 		}
 	}

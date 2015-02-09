@@ -42,7 +42,7 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function __construct(\phpbb\config\config $config, \un1matr1x\ogame\core\cr4me_link $cr4me_link)
 	{
-		$this->config = $config;
+		$this->config     = $config;
 		$this->cr4me_link = $cr4me_link;
 	}
 
@@ -76,7 +76,7 @@ class main_listener implements EventSubscriberInterface
 	{
 		if ($this->config['un1matr1x_ogame_cr_link'])
 		{
-			$text = $this->cr4me_link->cr4_to_image($event['text']);
+			$text          = $this->cr4me_link->cr4_to_image($event['text']);
 			$event['text'] = $text;
 		}
 	}
