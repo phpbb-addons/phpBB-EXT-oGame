@@ -31,14 +31,19 @@ class main_listener implements EventSubscriberInterface
 	/* @var \phpbb\config\config */
 	protected $config;
 
+	/* @var \un1matr1x\ogame\core\cr4me_link */
+	protected $cr4me_link;
+
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config
+	 * @param \phpbb\config\config					$config			Config helper
+	 * @param \un1matr1x\ogame\core\cr4me_link		$cr4me_link		cr4me-link parser
 	 */
-	public function __construct(\phpbb\config\config $config)
+	public function __construct(\phpbb\config\config $config, \un1matr1x\ogame\core\cr4me_link $cr4me_link)
 	{
 		$this->config = $config;
+		$this->cr4me_link = $cr4me_link;
 	}
 
 	/**
@@ -59,47 +64,20 @@ class main_listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Identify the show-parameter of the url-query and add this to the
-	 * callback output.
-	 *
-	 * @param	array	id or name of capturing group as key
-	 * @return	string	callback for cr4_to_image
-	 * @access	public
-	 */
-	public function cr_link_with_id($matches)
-	{
-		$i = $cr_id = 0;
-		while ($i <= 2)
-		{
-			if ((isset ($matches['id'.$i])) && (!empty($matches['id'.$i])))
-			{
-				$cr_id = $matches['id'.$i];
-			}
-			$i++;
-		}
-
-		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
-	}
-
-	/**
 	 * Function to replace cr4.me text links of with an image and a blue bar background
 	 * NB: only the output to the visitors user agent is altered, the data in the
 	 * database is unchanged.
 	 *
 	 * @param	object		$event	The event object
-	 * @return	null
+	 * @return	void
 	 * @access	public
 	 */
 	public function cr4_to_image($event)
 	{
 		if ($this->config['un1matr1x_ogame_cr_link'])
 		{
-			$text             = $event['text'];
-			$cr_link_pattern  = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
-			$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
-			$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
-			$text             = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
-			$event['text']    = $text;
+			$text = $this->cr4me_link->cr4_to_image($event['text']);
+			$event['text'] = $text;
 		}
 	}
 }

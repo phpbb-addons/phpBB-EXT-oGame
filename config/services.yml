@@ -3,5 +3,10 @@ services:
         class: un1matr1x\ogame\event\main_listener
         arguments:
             - @config
+            - @un1matr1x.ogame.cr4me_link
         tags:
             - { name: event.listener }
+    un1matr1x.ogame.cr4me_link:
+        class: un1matr1x\ogame\core\cr4me_link
+        arguments:
+            - @config

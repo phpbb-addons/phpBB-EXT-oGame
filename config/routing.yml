@@ -1,3 +1,0 @@
-un1matr1x_ogame_controller:
-    path: /ogame/{name}
-    defaults: { _controller: un1matr1x.ogame.controller:handle }
