@@ -9,8 +9,8 @@
         }
     },
     "unstable": {
-        "0.1": {
-            "current": "0.1.0",
+        "0.2": {
+            "current": "0.2.0",
             "announcement": "https://github.com/Un1matr1x/phpBB-EXT-oGame",
             "eol": null,
             "security": false
