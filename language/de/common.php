@@ -20,8 +20,10 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 
-	'ACP_OGAME_TITLE'						=> 'oGame Extension',
-	'ACP_OGAME'								=> 'Einstellungen',
-	'ACP_UN1MATR1X_OGAME_CR_LINK'			=> 'cr4.me-Links verschönern?',
-	'ACP_UN1MATR1X_OGAME_SETTING_SAVED'		=> 'Einstellungen wurden erfolgreich gespeichert!',
+	'ACP_OGAME_TITLE'								=> 'oGame Extension',
+	'ACP_OGAME'										=> 'Einstellungen',
+	'ACP_UN1MATR1X_OGAME_COLOR'			=> 'Hintergrundfarbe der cr4.me-Link-Verschönerung',
+	'ACP_UN1MATR1X_OGAME_COLOR_EXPLAIN'	=> 'Die Standartfarbe ist <b>31b0d5</b>',
+	'ACP_UN1MATR1X_OGAME_CR_LINK'					=> 'cr4.me-Links verschönern?',
+	'ACP_UN1MATR1X_OGAME_SETTING_SAVED'				=> 'Einstellungen wurden erfolgreich gespeichert!',
 ));

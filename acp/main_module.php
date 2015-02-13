@@ -32,12 +32,15 @@ class main_module
 			}
 
 			$config->set('un1matr1x_ogame_cr_link', $request->variable('un1matr1x_ogame_cr_link', 0));
+			$config->set('un1matr1x_ogame_color', $request->variable('un1matr1x_ogame_color', '31b0d5'));
 
 			trigger_error($user->lang('ACP_UN1MATR1X_OGAME_SETTING_SAVED').adm_back_link($this->u_action));
 		}
 
 		$template->assign_vars(array(
 			'U_ACTION'					=> $this->u_action,
+			'UN1MATR1X_OGAME_ACTIV'		=> true,
+			'UN1MATR1X_OGAME_COLOR'		=> $config['un1matr1x_ogame_color'],
 			'UN1MATR1X_OGAME_CR_LINK'	=> $config['un1matr1x_ogame_cr_link'],
 		));
 	}
