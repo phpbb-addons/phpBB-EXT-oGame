@@ -34,7 +34,9 @@ class cr4me_link
 	 */
 	public function cr_link_with_id($matches)
 	{
-		$counter = $cr_id = 0;
+		$counter          = $cr_id = 0;
+		$personal_color   = '';
+
 		while ($counter <= 2)
 		{
 			if ((isset ($matches['id'.$counter])) && (!empty($matches['id'.$counter])))
@@ -44,7 +46,12 @@ class cr4me_link
 			$counter++;
 		}
 
-		return '><span class="cr4me-link"><span class="cr4me-image"></span>'.$cr_id.'</span><';
+		if ($this->config['un1matr1x_ogame_color'] <> '31b0d5')
+		{
+			$personal_color = ' style="background-color:#'.$this->config['un1matr1x_ogame_color'].' !important;"';
+		}
+
+		return '><span class="cr4me-link"'.$personal_color.'><span class="cr4me-image"></span>'.$cr_id.'</span><';
 	}
 
 	/**
