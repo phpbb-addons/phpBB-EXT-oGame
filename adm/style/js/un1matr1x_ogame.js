@@ -15,7 +15,7 @@
 
 
 	function ogame_color() {
-		$('#un1matr1x_ogame_color').ColorPicker({
+		$('#un1matr1x_ogame_color, #un1matr1x_ogame_color_font').ColorPicker({
 			onSubmit: function(hsb, hex, rgb, el) {
 				$(el).val(hex);
 				$(el).ColorPickerHide();
