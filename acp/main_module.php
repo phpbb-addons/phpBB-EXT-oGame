@@ -31,9 +31,17 @@ class main_module
 				trigger_error('FORM_INVALID');
 			}
 
+			$un1matr1x_ogame_color      = (preg_match('/^[a-f0-9]{3,6}$/i', $request->variable(
+											'un1matr1x_ogame_color', ''))) ? $request->variable('un1matr1x_ogame_color'
+											, '') : $config['un1matr1x_ogame_color'];
+
+			$un1matr1x_ogame_color_font = (preg_match('/^[a-f0-9]{3,6}$/i', $request->variable(
+											'un1matr1x_ogame_color_font', ''))) ? $request->variable(
+											'un1matr1x_ogame_color_font', '') : $config['un1matr1x_ogame_color_font'];
+
 			$config->set('un1matr1x_ogame_cr_link', $request->variable('un1matr1x_ogame_cr_link', 0));
-			$config->set('un1matr1x_ogame_color', $request->variable('un1matr1x_ogame_color', '31b0d5'));
-			$config->set('un1matr1x_ogame_color_font', $request->variable('un1matr1x_ogame_color_font', 'ffffff'));
+			$config->set('un1matr1x_ogame_color', $un1matr1x_ogame_color);
+			$config->set('un1matr1x_ogame_color_font', $un1matr1x_ogame_color_font);
 
 			trigger_error($user->lang('ACP_UN1MATR1X_OGAME_SETTING_SAVED').adm_back_link($this->u_action));
 		}
