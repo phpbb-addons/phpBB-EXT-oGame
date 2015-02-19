@@ -20,12 +20,13 @@ class release_0_2_1 extends \phpbb\db\migration\migration
 
 	public static function depends_on()
 	{
-		return array('\un1matr1x\ogame\migrations\release_0_2_0');
+		return array('\un1matr1x\ogame\migrations\release_0_1_0');
 	}
 
 	public function update_data()
 	{
 		return array(
+			array('config.add', array('un1matr1x_ogame_color', '31b0d5')),
 			array('config.add', array('un1matr1x_ogame_color_font', 'ffffff')),
 		);
 	}

@@ -20,12 +20,14 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 
-	'ACP_OGAME_TITLE'								=> 'oGame Extension',
-	'ACP_OGAME'										=> 'Settings',
+	'ACP_OGAME_TITLE'						=> 'oGame Extension',
+	'ACP_OGAME'								=> 'Settings',
 
-	'ACP_UN1MATR1X_OGAME_COLOR'						=> 'Background color',
-	'ACP_UN1MATR1X_OGAME_COLOR_FONT'				=> 'Text font color',
-	'ACP_UN1MATR1X_OGAME_CR_LINK'					=> 'Prettify cr4.me-links?',
-	'ACP_UN1MATR1X_OGAME_SETTING_SAVED'				=> 'Settings have been saved successfully!',
-	'ACP_UN1MATR1X_OGAME_STYLE_EXPLAIN'				=> 'Choose your own color scheme for the link prettification.The default clors are <b>31b0d5</b> for the background and <b>ffffff</b> for the font.',
+	'ACP_UN1MATR1X_OGAME_COLOR'				=> 'Background color',
+	'ACP_UN1MATR1X_OGAME_COLOR_FONT'		=> 'Text font color',
+	'ACP_UN1MATR1X_OGAME_CR_LINK'			=> 'Prettify cr4.me-links?',
+	'ACP_UN1MATR1X_OGAME_SETTING_SAVED'		=> 'Settings have been saved successfully!',
+	'ACP_UN1MATR1X_OGAME_STYLE_EXPLAIN'		=> 'Choose your own color scheme for the link prettification.The default 
+												clors are <b>31b0d5</b> for the background and <b>ffffff</b> for the 
+												font.',
 ));

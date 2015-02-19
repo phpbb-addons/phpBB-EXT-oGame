@@ -34,9 +34,9 @@ class cr4me_link
 	 */
 	public function cr_link_with_id($matches)
 	{
-		$counter         = 0;
-		$cr_id           = 0;
-		$personal_color  = '';
+		$counter        = 0;
+		$cr_id          = 0;
+		$personal_color = '';
 
 		while ($counter <= 2)
 		{
@@ -51,8 +51,10 @@ class cr4me_link
 			($this->config['un1matr1x_ogame_color_font'] <> 'ffffff'))
 		{
 			$personal_color  = ' style="';
-			$personal_color .= ($this->config['un1matr1x_ogame_color'] <> '31b0d5') ? 'background-color:#'.$this->config['un1matr1x_ogame_color'].' !important; ' : '';
-			$personal_color .= ($this->config['un1matr1x_ogame_color_font'] <> 'ffffff') ? 'color:#'.$this->config['un1matr1x_ogame_color_font'].' !important; ' : '';
+			$personal_color .= ($this->config['un1matr1x_ogame_color'] <> '31b0d5') ? 'background-color:#'.
+								$this->config['un1matr1x_ogame_color'].' !important; ' : '';
+			$personal_color .= ($this->config['un1matr1x_ogame_color_font'] <> 'ffffff') ? 'color:#'.
+								$this->config['un1matr1x_ogame_color_font'].' !important; ' : '';
 			$personal_color .= '"';
 		}
 
