@@ -50,12 +50,8 @@ class cr4me_link
 		if (($this->config['un1matr1x_ogame_color'] <> '31b0d5') ||
 			($this->config['un1matr1x_ogame_color_font'] <> 'ffffff'))
 		{
-			$personal_color  = ' style="';
-			$personal_color .= ($this->config['un1matr1x_ogame_color'] <> '31b0d5') ? 'background-color:#'.
-								$this->config['un1matr1x_ogame_color'].' !important; ' : '';
-			$personal_color .= ($this->config['un1matr1x_ogame_color_font'] <> 'ffffff') ? 'color:#'.
-								$this->config['un1matr1x_ogame_color_font'].' !important; ' : '';
-			$personal_color .= '"';
+			$personal_color  = ' style="background-color:#'.$this->config['un1matr1x_ogame_color'].' !important; ';
+			$personal_color .= 'color:#'.$this->config['un1matr1x_ogame_color_font'].' !important;"';
 		}
 
 		return '><span class="cr4me-link"'.$personal_color.'><span class="cr4me-image"></span>'.$cr_id.'</span><';
@@ -67,19 +63,17 @@ class cr4me_link
 	 * database is unchanged.
 	 *
 	 * @param	string		$text	the original text
-	 * @return	string|null	$text	the text with the replaced cr4me-links
+	 * @return	string		$text	the text with the replaced cr4me-links
 	 * @access	public
 	 */
 	public function cr4_to_image($text)
 	{
-		if ($this->config['un1matr1x_ogame_cr_link'])
-		{
-			$cr_link_pattern  = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
-			$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
-			$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
-			$text             = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
+		$cr_link_pattern  = '@[^\"]http(s)?://(kb\\.un1matr1x\\.de|cr4\\.me)\\/kb\\.php\\?(?<amp>(&amp;|&))?(';
+		$cr_link_pattern .= '(?<query>(lang=)([a-z_]{2,11})?|(pw=)([a-zA-Z0-9]{6})?)|show=(?<id1>[0-9]+))(';
+		$cr_link_pattern .= '(?&amp)?((?&query)|show=(?<id2>[0-9]+))?)((?&amp)?((?&query)|show=(?<id3>[0-9]+))?)<@';
+		$text             = preg_replace_callback($cr_link_pattern, 'self::cr_link_with_id', $text);
 
-			return $text;
-		}
+		return $text;
+
 	}
 }
