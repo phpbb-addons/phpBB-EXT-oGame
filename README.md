@@ -60,3 +60,7 @@ DO NOT INSTALL THIS EXTENSION BY NOW!
 [![Dependency Status]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c/badge.svg?style=flat)]
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c#tab-settings)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Un1matr1x/phpbb-ext-ogame/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
