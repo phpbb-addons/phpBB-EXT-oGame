@@ -35,8 +35,7 @@ class main_module
 							? $request->variable('un1matr1x_ogame_color', '') : $config['un1matr1x_ogame_color'];
 
 			$ogame_color_font = (preg_match('/^[a-f0-9]{3,6}$/i', $request->variable('un1matr1x_ogame_color_font', ''))
-							) ? $request->variable('un1matr1x_ogame_color_font', '') :
-							$config['un1matr1x_ogame_color_font'];
+							) ? $request->variable('un1matr1x_ogame_color_font', '') : $config['un1matr1x_ogame_color_font'];
 
 			$config->set('un1matr1x_ogame_cr_link', $request->variable('un1matr1x_ogame_cr_link', 0));
 			$config->set('un1matr1x_ogame_color', $ogame_color);
