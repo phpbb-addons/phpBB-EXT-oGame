@@ -21,13 +21,13 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 	}
 
 	/**
-	 * @param boolean $status
+	 * @param integer $value
+	 * @param string $name
 	 */
-	protected function set_beautification_enable($db, $status)
+	protected function change_config_value($db, $value, $name)
 	{
 		$sql = "UPDATE phpbb_config
-			SET config_value = '".(($status) ? '1' : '0')."'
-			WHERE config_name = 'un1matr1x_ogame_cr_link'";
+			SET config_value = '".$value."' WHERE config_name = '".$name."'";
 		$db->sql_query($sql);
 		$this->purge_cache();
 	}
@@ -60,7 +60,7 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 	public function test_without_beautification($post)
 	{
 		$db = $this->get_db();
-		$this->set_beautification_enable($db, false);
+		$this->change_config_value($db, 0, 'un1matr1x_ogame_cr_link');
 		$this->login();
 
 		$crawler = self::request('GET', "viewtopic.php?t={$post['topic_id']}&sid={$this->sid}");

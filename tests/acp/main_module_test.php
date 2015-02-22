@@ -10,7 +10,7 @@
 
 namespace un1matr1x\ogame\tests\acp\main_module;
 
-require_once dirname(__FILE__) . '/../../acp/main_module.php';
+require_once dirname(__FILE__).'/../../acp/main_module.php';
 
 /**
 * @group cr4me_acp
@@ -25,7 +25,7 @@ class main_module_test extends \phpbb_test_case
 	public function test_check_hex_color()
 	{
 		$main_module = new \un1matr1x\ogame\acp\main_module;
-		$color1      = $main_module->check_hex_color('fff','000');
+		$color1      = $main_module->check_hex_color('fff', '000');
 		$this->assertEquals('fff', $color1);
 	}
 }
