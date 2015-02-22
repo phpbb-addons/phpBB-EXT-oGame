@@ -22,6 +22,12 @@ $lang = array_merge($lang, array(
 
 	'ACP_OGAME_TITLE'						=> 'oGame Extension',
 	'ACP_OGAME'								=> 'Einstellungen',
+
+	'ACP_UN1MATR1X_OGAME_COLOR'				=> 'Hintergrundfarbe',
+	'ACP_UN1MATR1X_OGAME_COLOR_FONT'		=> 'Schriftfarbe',
 	'ACP_UN1MATR1X_OGAME_CR_LINK'			=> 'cr4.me-Links verschönern?',
 	'ACP_UN1MATR1X_OGAME_SETTING_SAVED'		=> 'Einstellungen wurden erfolgreich gespeichert!',
+	'ACP_UN1MATR1X_OGAME_STYLE_EXPLAIN'		=> 'Wähle deine eigene Farbgebung für die Linkverschönerung. Die 
+												Standartfarbe für den Hintergrund ist <b>31b0d5</b> und für die Schrift
+												<b>ffffff</b>.',
 ));

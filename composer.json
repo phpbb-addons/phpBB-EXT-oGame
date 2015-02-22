@@ -2,9 +2,9 @@
 	"name": "un1matr1x/ogame",
 	"type": "phpbb-extension",
 	"description": "This is an Extension for phpBB 3.1 about oGame",
-	"homepage": "https://github.com/Un1matr1x/phpBB-EXT-oGame",
-	"version": "0.1.0",
-	"time": "2015-01-02",
+	"homepage": "https://un1matr1x.github.io/phpBB-EXT-oGame/",
+	"version": "0.2.1",
+	"time": "2015-02-21",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "Falk Seidel",
@@ -23,7 +23,7 @@
 	"extra": {
 		"display-name": "oGame Extension",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.0,<3.2.*@dev"
+			"phpbb/phpbb": ">=3.1.3,<3.2.*@dev"
 		},
 		"version-check": {
 			"host": "un1matr1x.github.io",

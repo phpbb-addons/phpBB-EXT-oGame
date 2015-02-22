@@ -4,17 +4,35 @@
 
 <form id="acp_board" method="post" action="{U_ACTION}">
 	<fieldset>
+		<legend>{L_ACP_GENERAL_CONFIGURATION}</legend>
 		<dl>
 			<dt><label for="un1matr1x_ogame_cr_link">{L_ACP_UN1MATR1X_OGAME_CR_LINK}</label></dt>
-			<dd><input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="1" <!-- IF UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
-				<input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="0" <!-- IF not UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			<dd>
+				<input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="1" <!-- IF UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
+				<input type="radio" class="radio" name="un1matr1x_ogame_cr_link" value="0" <!-- IF not UN1MATR1X_OGAME_CR_LINK -->checked="checked"<!-- ENDIF --> /> {L_NO}
+			</dd>
 		</dl>
+	</fieldset>
 
+	<fieldset>
+		<legend>{L_ACP_STYLE_MANAGEMENT}</legend>
+		<p>{L_ACP_UN1MATR1X_OGAME_STYLE_EXPLAIN}</p>
+		<dl>
+			<dt><label for="un1matr1x_ogame_color">{L_ACP_UN1MATR1X_OGAME_COLOR}:</label></dt>
+			<dd><input name="un1matr1x_ogame_color" type="text" id="un1matr1x_ogame_color" value="{UN1MATR1X_OGAME_COLOR}" size="6" maxlength="6" data-cip-id="un1matr1x_ogame_color"/></dd>
+		</dl>
+		<dl>
+			<dt><label for="un1matr1x_ogame_color_font">{L_ACP_UN1MATR1X_OGAME_COLOR_FONT}:</label></dt>
+			<dd><input name="un1matr1x_ogame_color_font" type="text" id="un1matr1x_ogame_color_font" value="{UN1MATR1X_OGAME_COLOR_FONT}" size="6" maxlength="6" data-cip-id="un1matr1x_ogame_color_font"/></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
 		<p class="submit-buttons">
 			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
 			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
 		</p>
-
 		{S_FORM_TOKEN}
 	</fieldset>
 </form>

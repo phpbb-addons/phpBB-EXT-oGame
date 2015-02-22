@@ -17,7 +17,7 @@ class main_info
 		return array(
 			'filename'	=> '\un1matr1x\ogame\acp\main_module',
 			'title'		=> 'ACP_OGAME_TITLE',
-			'version'	=> '0.1.0',
+			'version'	=> '0.2.1',
 			'modes'		=> array(
 				'settings'	=> array('title' => 'ACP_OGAME',
 									'auth' => 'ext_un1matr1x/ogame && acl_a_board',
