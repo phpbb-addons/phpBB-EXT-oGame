@@ -18,7 +18,8 @@
 	},
 	"require-dev": {
 		"phpbb/epv": "dev-master",
-		"codeclimate/php-test-reporter": "dev-master"
+		"codeclimate/php-test-reporter": "dev-master",
+		"satooshi/php-coveralls": "0.6.*"
 	},
 	"extra": {
 		"display-name": "oGame Extension",
