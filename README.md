@@ -62,5 +62,9 @@ DO NOT INSTALL THIS EXTENSION BY NOW!
 (https://www.versioneye.com/user/projects/54a722dd27b014005400029c#tab-settings)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Un1matr1x/phpbb-ext-ogame/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Un1matr1x/phpbb-ext-ogame/trend.png)]
+(https://bitdeli.com/free "Bitdeli Badge")
+
+[![Stories in Ready](https://badge.waffle.io/un1matr1x/phpbb-ext-ogame.png?label=ready&title=Ready)]
+(https://waffle.io/un1matr1x/phpbb-ext-ogame)
 
