@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/un1matr1x/phpbb-ext-ogame.png?label=ready&title=Ready)](https://waffle.io/un1matr1x/phpbb-ext-ogame)
 [phpbb-ext-ogame] (https://github.com/Un1matr1x/phpBB-EXT-oGame)
 ==================
 
