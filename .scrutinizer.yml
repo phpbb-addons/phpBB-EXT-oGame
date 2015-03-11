@@ -1,4 +1,6 @@
 tools:
+    external_code_coverage:
+        timeout: 1800 # seconds
     php_cs_fixer:
         enabled: true
         config:

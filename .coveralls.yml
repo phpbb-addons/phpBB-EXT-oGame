@@ -3,6 +3,6 @@
 service_name: travis-ci # travis-ci or travis-pro
 
 # for php-coveralls
-src_dir: .
-coverage_clover: build/logs/clover.xml
-json_path: build/logs/coveralls-upload.json
+src_dir: ./
+coverage_clover: ../../phpBB3/build/logs/clover.xml
+json_path: ../../phpBB3/build/logs/coveralls-upload.json
