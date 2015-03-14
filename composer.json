@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "This is an Extension for phpBB 3.1 about oGame",
 	"homepage": "https://un1matr1x.github.io/phpBB-EXT-oGame/",
-	"version": "0.2.1",
-	"time": "2015-02-21",
+	"version": "0.3.0",
+	"time": "2015-03-14",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "Falk Seidel",
