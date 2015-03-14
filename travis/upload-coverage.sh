@@ -16,5 +16,5 @@ then
 	wget https://scrutinizer-ci.com/ocular.phar
 	php ocular.phar code-coverage:upload --format=php-clover ../../phpBB3/build/logs/clover.xml
 	#upload Coverage to coveralls.io
-	php /home/travis/build/$BASEDIR/vendor/bin/coveralls -v -c ../$BASEDIR/.coveralls.yml
+	php /home/travis/build/$BASEDIR/vendor/bin/coveralls -v
 fi
