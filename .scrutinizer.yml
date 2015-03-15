@@ -222,7 +222,9 @@ tools:
         min_mass: 16
         filter:
             paths: {  }
-            excluded_paths: {  }
+            excluded_paths:
+                - migrations/data/*
+                - tests/*
     php_pdepend:
         enabled: true
         configuration_file: null
