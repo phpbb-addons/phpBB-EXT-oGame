@@ -30,4 +30,10 @@ $lang = array_merge($lang, array(
 	'ACP_UN1MATR1X_OGAME_STYLE_EXPLAIN'		=> 'Choose your own color scheme for the link prettification.The default 
 												clors are <b>31b0d5</b> for the background and <b>ffffff</b> for the 
 												font.',
+
+	'SHOW_CR4_ME_PROFILE'					=> 'View cr4.me Profile',
+	'SHOW_GAMEFORGE_PROFILE'				=> 'View Gameforge Profile',
+
+	'UN1MATR1X_CR4ME'						=> 'cr4.me',
+	'UN1MATR1X_GAMEFORGE'					=> 'Gameforge',
 ));
