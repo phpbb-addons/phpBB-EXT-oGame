@@ -15,7 +15,7 @@ class profilefield_cr4me extends \phpbb\db\migration\profilefield_base_migration
 	public static function depends_on()
 	{
 		return array(
-			'\un1matr1x\ogame\migrations\release_0_3_0',
+			'\un1matr1x\ogame\migrations\release_0_3_1',
 		);
 	}
 
@@ -26,17 +26,17 @@ class profilefield_cr4me extends \phpbb\db\migration\profilefield_base_migration
 		);
 	}
 
-	protected $profilefield_name = 'un1matr1x_cr4me';
+	protected $profilefield_name = 'ogame_crforme';
 
 	protected $profilefield_database_type = array('VCHAR', '');
 
 	protected $profilefield_data = array(
-		'field_name'			=> 'un1matr1x_cr4me',
-		'field_type'			=> 'profilefields.type.int',
-		'field_ident'			=> 'un1matr1x_cr4me',
+		'field_name'			=> 'ogame_crforme',
+		'field_type'			=> 'profilefields.type.string',
+		'field_ident'			=> 'ogame_crforme',
 		'field_length'			=> '20',
 		'field_minlen'			=> '1',
-		'field_maxlen'			=> '999999999999999',
+		'field_maxlen'			=> '20',
 		'field_novalue'			=> '',
 		'field_default_value'	=> '',
 		'field_validation'		=> '[0-9]+',
