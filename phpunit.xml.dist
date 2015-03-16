@@ -27,7 +27,7 @@
 			<directory>./tests/</directory>
 		</blacklist>
 		<whitelist processUncoveredFilesFromWhitelist="true">
-			<directory suffix=".php">./</directory>
+			<directory suffix=".php">./ext/</directory>
 			<exclude>
 				<directory suffix=".php">./language/</directory>
 				<directory suffix=".php">./migrations/</directory>
