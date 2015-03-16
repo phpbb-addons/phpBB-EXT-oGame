@@ -8,12 +8,20 @@
 	white-space: nowrap;
 }
 
-.cr4me-image {
-	background-image: url("./images/cr_no_gd.png");
+.cr4me-link-image {
 	background-repeat: no-repeat;
 	padding: 15px;
-	background-size: 100% auto;
 	margin-top: -10px;
 	display: inline-block;
 	background-position: 0 120%;
+}
+
+.un1matr1x_cr4me-icon {
+	background-image: url("./images/cr4me.png");
+	background-size: 100% auto;
+}
+
+.un1matr1x_gameforge-icon {
+	background-image: url("./images/gameforge.png");
+	background-size: 100% auto;
 }
