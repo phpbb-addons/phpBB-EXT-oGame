@@ -9,10 +9,8 @@
 }
 
 .cr4me-link-image {
-	background-image: url("./images/cr4me.png");
 	background-repeat: no-repeat;
 	padding: 15px;
-	background-size: 100% auto;
 	margin-top: -10px;
 	display: inline-block;
 	background-position: 0 120%;

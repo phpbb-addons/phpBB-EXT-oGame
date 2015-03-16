@@ -54,7 +54,7 @@ class cr4me_link
 			$personal_color .= 'color:#'.$this->config['un1matr1x_ogame_color_font'].' !important;"';
 		}
 
-		return '><span class="cr4me-link"'.$personal_color.'><span class="cr4me-link-image"></span>'.$cr_id.'</span><';
+		return '><span class="cr4me-link"'.$personal_color.'><span class="cr4me-link-image un1matr1x_cr4me-icon"></span>'.$cr_id.'</span><';
 	}
 
 	/**
