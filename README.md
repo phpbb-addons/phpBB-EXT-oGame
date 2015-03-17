@@ -1,5 +1,8 @@
-[phpbb-ext-ogame] (https://github.com/Un1matr1x/phpBB-EXT-oGame)
+[phpbb-ext-ogame] (http://un1matr1x.github.io/phpBB-EXT-oGame)
 ==================
+
+[![Build Status](https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame.svg)]
+(https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame)
 
 # phpBB 3.1 oGame Extension
 
@@ -8,8 +11,10 @@ This is an Extension for [phpBB 3.1] (https://www.phpbb.com/) about [oGame](http
 
 ## Description
 
-No description is given at this point - wait just a bit longer.
+Do not use this extension by now!
 
+This extension is a port of the [phpbb3-oGame-MOD](https://github.com/Un1matr1x/phpbb3-mod-OGame) but is not
+feature-complete by now.
 
 ## Installation
 
@@ -29,42 +34,3 @@ DO NOT INSTALL THIS EXTENSION BY NOW!
 ## Changelog
 
 [Changelog](CHANGELOG.md)
-
-## Badges
-
-[![Build Status](https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame.svg)]
-(https://travis-ci.org/Un1matr1x/phpBB-EXT-oGame)
-&nbsp;&bull;&nbsp;
-[![Scrutinizer Code Quality]
-(https://scrutinizer-ci.com/g/Un1matr1x/phpBB-EXT-oGame/badges/quality-score.png?b=master)]
-(https://scrutinizer-ci.com/g/Un1matr1x/phpBB-EXT-oGame/?branch=master)
-&nbsp;&bull;&nbsp;
-[![Code Climate](https://codeclimate.com/github/Un1matr1x/phpBB-EXT-oGame/badges/gpa.svg)]
-(https://codeclimate.com/github/Un1matr1x/phpBB-EXT-oGame)
-&nbsp;&bull;&nbsp;
-[![Codacy Badge](https://www.codacy.com/project/badge/b4d3eff7a48c4fd69bb3fa70f2829c36)]
-(https://www.codacy.com/public/github/phpBB-EXT-oGame)
-&nbsp;&bull;&nbsp;
-[![SensioLabsInsight]
-(https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f/mini.png)]
-(https://insight.sensiolabs.com/projects/108b0606-80e5-463e-9475-2829a7dda26f)
-&nbsp;&bull;&nbsp;
-[![Average time to resolve an issue]
-(http://isitmaintained.com/badge/resolution/Un1matr1x/phpBB-EXT-oGame.svg)]
-(http://isitmaintained.com/project/Un1matr1x/phpBB-EXT-oGame "Average time to resolve an issue")
-&nbsp;&bull;&nbsp;
-[![Percentage of issues still open]
-(http://isitmaintained.com/badge/open/Un1matr1x/phpBB-EXT-oGame.svg)]
-(http://isitmaintained.com/project/Un1matr1x/phpBB-EXT-oGame "Percentage of issues still open")
-&nbsp;&bull;&nbsp;
-[![Dependency Status]
-(https://www.versioneye.com/user/projects/54a722dd27b014005400029c/badge.svg?style=flat)]
-(https://www.versioneye.com/user/projects/54a722dd27b014005400029c#tab-settings)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Un1matr1x/phpbb-ext-ogame/trend.png)]
-(https://bitdeli.com/free "Bitdeli Badge")
-
-[![Stories in Ready](https://badge.waffle.io/un1matr1x/phpbb-ext-ogame.png?label=ready&title=Ready)]
-(https://waffle.io/un1matr1x/phpbb-ext-ogame)
-
