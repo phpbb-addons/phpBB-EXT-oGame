@@ -41,7 +41,7 @@ class main_listener implements EventSubscriberInterface
 
 	/* @var \phpbb\template\template */
 	protected $template;
-	
+
 	/* @var \phpbb\user */
 	protected $user;
 

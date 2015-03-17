@@ -46,7 +46,7 @@ class profile_cards
 	public function view_profile_cards($user_id)
 	{
 		/* @var $cp \phpbb\profilefields\manager */
-		$un1_cp = $this->phpbb_container->get('profilefields.manager');
+		$un1_cp         = $this->phpbb_container->get('profilefields.manager');
 		$profile_fields = $un1_cp->grab_profile_fields_data($user_id);
 
 		$gf_id = $profile_fields[$user_id]['ogame_gameforge']['value'];
