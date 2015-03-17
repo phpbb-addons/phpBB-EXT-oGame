@@ -34,19 +34,20 @@ class profile_cards
 	 *
 	 * @param \phpbb\config\config					$config
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\user $user, Container $phpbb_container)
+	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\user $user,
+								Container $phpbb_container)
 	{
-		$this->config = $config;
-		$this->db     = $db;
-		$this->user   = $user;
+		$this->config          = $config;
+		$this->db              = $db;
+		$this->user            = $user;
 		$this->phpbb_container = $phpbb_container;
 	}
 
 	public function view_profile_cards($user_id)
 	{
 		/* @var $cp \phpbb\profilefields\manager */
-		$cp = $this->phpbb_container->get('profilefields.manager');
-		$profile_fields = $cp->grab_profile_fields_data($user_id);
+		$un1_cp = $this->phpbb_container->get('profilefields.manager');
+		$profile_fields = $un1_cp->grab_profile_fields_data($user_id);
 
 		$gf_id = $profile_fields[$user_id]['ogame_gameforge']['value'];
 		$cr_id = $profile_fields[$user_id]['ogame_crforme']['value'];
