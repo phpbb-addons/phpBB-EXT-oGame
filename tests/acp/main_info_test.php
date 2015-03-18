@@ -29,5 +29,15 @@ class main_info_test extends \phpbb_test_case
 		$composer_json = json_decode(file_get_contents(dirname(__FILE__).'/../../composer.json'),true);
 
 		$this->assertEquals($composer_json['version'], $output['version']);
+
+		return $output;
+	}
+
+	public function test_version_agains_versioncheck($output)
+	{
+		$composer_json = json_decode(file_get_contents(
+						'https://un1matr1x.github.io/phpBB-EXT-oGame/versioncheck/un1matr1x_ogame_version.json'),true);
+
+		$this->assertEquals($composer_json['unstable']['0.3']['current'], $output['version']);
 	}
 }
