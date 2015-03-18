@@ -36,7 +36,7 @@ class cr4me_link_test extends \phpbb_test_case
 		$text[]     = 'http://cr4.me/kb.php?show=1&lang=es_us&pw=abc123';
 		$text[]     = 'http://cr4.me/kb.php?lang=es_us&show=1&pw=abc123';
 		$text[]     = 'http://cr4.me/kb.php?lang=es_us&pw=abc123&show=1';
-		$text[]     = 'http://cr4.me/kb.php?pw=abc12&lang=es_us3&show=1';
+		$text[]     = 'http://cr4.me/kb.php?pw=abc123&lang=es_us&show=1';
 		$counter    = 0;
 		$cr4me_link = new \un1matr1x\ogame\core\cr4me_link($config);
 
