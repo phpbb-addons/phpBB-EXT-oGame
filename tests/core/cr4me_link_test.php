@@ -50,5 +50,22 @@ class cr4me_link_test extends \phpbb_test_case
 								.'</span>1</span><', $output);
 			$counter++;
 		}
+
+		return $text;
+	}
+
+	/**
+	 * @depends test_link_recognition
+	 */
+	public function test_set_color($text)
+	{
+		$config                               = new \phpbb\config\config(array());
+		$cr4me_link                           = new \un1matr1x\ogame\core\cr4me_link($config);
+		$config['un1matr1x_ogame_color']      = 'ffffff';
+		$config['un1matr1x_ogame_color_font'] = '000000';
+		$output                               = $cr4me_link->cr4_to_image('>'.$text[0].'<');
+
+		$this->assertEquals('><span class="cr4me-link" style="background-color:#ffffff !important; color:#000000!impor'
+								.'tant;"><span class="cr4me-link-image ogame_crforme-icon"></span>1</span><', $output);
 	}
 }
