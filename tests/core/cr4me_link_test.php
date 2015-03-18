@@ -47,7 +47,7 @@ class cr4me_link_test extends \phpbb_test_case
 		{
 			$output = $cr4me_link->cr4_to_image('>'.$text[$counter].'<');
 			$this->assertEquals('><span class="cr4me-link"><span class="cr4me-link-image ogame_crforme-icon">'
-								.'</span>1</span><', $output);
+							.'</span>1</span><', $output);
 			$counter++;
 		}
 
@@ -65,7 +65,7 @@ class cr4me_link_test extends \phpbb_test_case
 		$config['un1matr1x_ogame_color_font'] = '000000';
 		$output                               = $cr4me_link->cr4_to_image('>'.$text[0].'<');
 
-		$this->assertEquals('><span class="cr4me-link" style="background-color:#ffffff !important; color:#000000!impor'
-								.'tant;"><span class="cr4me-link-image ogame_crforme-icon"></span>1</span><', $output);
+		$this->assertEquals('><span class="cr4me-link" style="background-color:#ffffff !important; color:#000000 !impo'
+							.'rtant;"><span class="cr4me-link-image ogame_crforme-icon"></span>1</span><', $output);
 	}
 }
