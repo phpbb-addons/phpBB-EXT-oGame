@@ -32,7 +32,10 @@ class profile_cards
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config
+	 * @param \phpbb\config\config					$config				Config helper
+	 * @param \phpbb\db\driver\driver_interface		$db					Database object
+	 * @param \phpbb\user							$user				User object
+	 * @param ContainerInterface					$phpbb_container	Service container interface
 	 */
 	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\user $user,
 								Container $phpbb_container)
@@ -43,6 +46,11 @@ class profile_cards
 		$this->phpbb_container = $phpbb_container;
 	}
 
+	/**
+	 * Assign the userspecified IDs to the template vars
+	 *
+	 * @return array
+	 */
 	public function view_profile_cards($user_id)
 	{
 		/* @var $cp \phpbb\profilefields\manager */

@@ -15,11 +15,21 @@ namespace un1matr1x\ogame\tests\cr4me_profilefield;
 */
 class cr4me_profilefield_test extends \phpbb_functional_test_case
 {
+	/**
+	* Define the extensions to be tested
+	*
+	* @return array vendor/name of extension(s) to test
+	*/
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
+	/**
+	 * Function to test if custom profile fields can be used and data is stored correct
+	 *
+	 * @return void
+	 */
 	public function test_submitting_profile_info()
 	{
 		$this->add_lang('ucp');

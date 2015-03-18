@@ -17,7 +17,7 @@ class cr4me_link
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config
+	 * @param \phpbb\config\config		$config		Config helper
 	 */
 	public function __construct(\phpbb\config\config $config)
 	{

@@ -17,11 +17,21 @@ require_once dirname(__FILE__).'/../../acp/main_info.php';
 */
 class main_info_test extends \phpbb_test_case
 {
+	/**
+	* Define the extensions to be tested
+	*
+	* @return array vendor/name of extension(s) to test
+	*/
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
+	/**
+	* test main_info version is the same as the composer annouces
+	*
+	* @return array
+	*/
 	public function test_version_agains_composer()
 	{
 		$main_info     = new \un1matr1x\ogame\acp\main_info;
@@ -33,6 +43,11 @@ class main_info_test extends \phpbb_test_case
 		return $output;
 	}
 
+	/**
+	* test main_info version is the same as the web-versioncheck annouces
+	*
+	* @return void
+	*/
 	public function test_version_agains_versioncheck($output)
 	{
 		$composer_json = json_decode(file_get_contents(

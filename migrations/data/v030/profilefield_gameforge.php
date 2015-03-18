@@ -10,6 +10,9 @@
 
 namespace un1matr1x\ogame\migrations\data\v030;
 
+/**
+ * profilefield for gameforge.com-ID
+ */
 class profilefield_gameforge extends \phpbb\db\migration\profilefield_base_migration
 {
 	public static function depends_on()

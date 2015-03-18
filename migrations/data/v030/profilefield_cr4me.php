@@ -10,6 +10,9 @@
 
 namespace un1matr1x\ogame\migrations\data\v030;
 
+/**
+ * profilefield for cr4.me-ID
+ */
 class profilefield_cr4me extends \phpbb\db\migration\profilefield_base_migration
 {
 	public static function depends_on()

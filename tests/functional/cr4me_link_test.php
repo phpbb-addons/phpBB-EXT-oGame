@@ -15,14 +15,22 @@ namespace un1matr1x\ogame\tests\cr4me_link;
 */
 class cr4me_link_posting_test extends \phpbb_functional_test_case
 {
+	/**
+	* Define the extensions to be tested
+	*
+	* @return array vendor/name of extension(s) to test
+	*/
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
 	/**
+	 * Function to alter config-values
+	 *
 	 * @param integer $value
 	 * @param string $name
+	 * @return void
 	 */
 	protected function change_config_value($db, $value, $name)
 	{
@@ -33,6 +41,11 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 	}
 
 	/**
+	 * Function to test if link-pretification is working on functional-boards
+	 *
+	 * This function add a first post with a simple cr4.me-link and tested if the cr4me-link class appears in the DOM.
+	 * Then a second post is added to this topic with another cr4.me-link and tested for cr4me-link-image class @ DOM.
+	 *
 	 * @return	object	$post	the created post for furter tests
 	 */
 	public function test_cr4me_beautification()
@@ -55,8 +68,13 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 	}
 
 	/**
-	 * @depends test_cr4me_beautification
+	 * Function to test if personalized link-pretification is working on functional-boards
+	 *
+	 * This function alter the colors for pretification and checks if the above created posts show this additional
+	 * inline css
+	 *
 	 * @return	object	$post	the created post for furter tests
+	 * @depends test_cr4me_beautification
 	 */
 	public function test_personal_beautification($post)
 	{
@@ -73,6 +91,9 @@ class cr4me_link_posting_test extends \phpbb_functional_test_case
 	}
 
 	/**
+	 * Function to test if link-pretification can be turned off on functional-boards
+	 *
+	 * @return void
 	 * @depends test_personal_beautification
 	 */
 	public function test_without_beautification($post)
