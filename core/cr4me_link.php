@@ -38,7 +38,7 @@ class cr4me_link
 		$cr_id          = 0;
 		$personal_color = '';
 
-		while ($counter <= 2)
+		while ($counter <= 3)
 		{
 			if ((isset ($matches['id'.$counter])) && (!empty($matches['id'.$counter])))
 			{
