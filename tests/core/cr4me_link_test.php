@@ -24,14 +24,27 @@ class cr4me_link_test extends \phpbb_test_case
 
 	public function test_link_recognition()
 	{
-		$config                               = new \phpbb\config\config(array());
-		$text       = '>http://cr4.me/kb.php?show=1<';
+		$config     = new \phpbb\config\config(array());
+		$text       = array();
+		$text[]     = 'http://cr4.me/kb.php?show=1';						#basic link cr4.me
+		$text[]     = 'http://kb.un1matr1x.de/kb.php?show=1';				#basic link cr4.me with old domain
+		$text[]     = 'http://cr4.me/kb.php?show=1&pw=abc123';				#basic link cr4.me with password
+		$text[]     = 'http://cr4.me/kb.php?show=1&lang=es_us';				#basic link cr4.me with password
+		$text[]     = 'http://cr4.me/kb.php?show=1&pw=abc123&lang=es_us';	#basic link cr4.me with password & language
+		$text[]     = 'http://cr4.me/kb.php?pw=abc123&show=1';				#basic link cr4.me with password first place
+		$text[]     = 'http://cr4.me/kb.php?lang=de&show=1';				#basic link cr4.me with language first place
+		$text[]     = 'http://cr4.me/kb.php?show=1&lang=es_us&pw=abc123';	#basic link cr4.me with language & password
+		$text[]     = 'http://cr4.me/kb.php?lang=es_us&show=1&pw=abc123';	#basic link cr4.me with language first place & password
+		$text[]     = 'http://cr4.me/kb.php?lang=es_us&pw=abc123&show=1';	#basic link cr4.me with language first place & password second place
+		$text[]     = 'http://cr4.me/kb.php?pw=abc12&lang=es_us3&show=1';	#basic link cr4.me with password first place & language second place
+		$counter    = 0;
 		$cr4me_link = new \un1matr1x\ogame\core\cr4me_link($config);
-		$config['un1matr1x_ogame_color']      = '31b0d5';
-		$config['un1matr1x_ogame_color_font'] = 'ffffff';
-		$output     = $cr4me_link->cr4_to_image($text);
 
-		$this->assertEquals('><span class="cr4me-link"><span class="cr4me-link-image ogame_crforme-icon">'
-							.'</span>1</span><', $output);
+		while ($counter <= 10)
+		{
+			$output = $cr4me_link->cr4_to_image('>'.$text[$counter].'<');
+			$this->assertEquals('><span class="cr4me-link"><span class="cr4me-link-image ogame_crforme-icon">'
+								.'</span>1</span><', $output);
+		}
 	}
 }
