@@ -12,6 +12,10 @@
 			"homepage": "http://cr4.me/",
 			"role": "Lead Developer"
 		}],
+	"support": {
+		"issues": "https://github.com/Un1matr1x/phpBB-EXT-oGame/issues"
+		"source": "https://github.com/Un1matr1x/phpBB-EXT-oGame"
+	}
 	"require": {
 		"php": ">=5.3.3",
 		"composer/installers": "~1.0"
