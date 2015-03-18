@@ -26,6 +26,7 @@ class cr4me_link_test extends \phpbb_test_case
 	{
 		return array('un1matr1x/ogame');
 	}
+
 	/**
 	 * This test should make sure every possible cr4.me-link is parsed correct and transformed as intended.
 	 *

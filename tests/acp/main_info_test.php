@@ -47,6 +47,7 @@ class main_info_test extends \phpbb_test_case
 	* test main_info version is the same as the web-versioncheck annouces
 	*
 	* @return void
+	* @depends test_version_agains_composer
 	*/
 	public function test_version_agains_versioncheck($output)
 	{
