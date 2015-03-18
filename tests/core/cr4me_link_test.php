@@ -40,6 +40,9 @@ class cr4me_link_test extends \phpbb_test_case
 		$counter    = 0;
 		$cr4me_link = new \un1matr1x\ogame\core\cr4me_link($config);
 
+		$config['un1matr1x_ogame_color']      = '31b0d5';
+		$config['un1matr1x_ogame_color_font'] = 'ffffff';
+
 		while ($counter <= 10)
 		{
 			$output = $cr4me_link->cr4_to_image('>'.$text[$counter].'<');
