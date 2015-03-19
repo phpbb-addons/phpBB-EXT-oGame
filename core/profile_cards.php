@@ -35,7 +35,7 @@ class profile_cards
 	 * @param \phpbb\config\config					$config				Config helper
 	 * @param \phpbb\db\driver\driver_interface		$db					Database object
 	 * @param \phpbb\user							$user				User object
-	 * @param ContainerInterface					$phpbb_container	Service container interface
+	 * @param Container								$phpbb_container	Service container interface
 	 */
 	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\user $user,
 								Container $phpbb_container)

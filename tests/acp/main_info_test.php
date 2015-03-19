@@ -20,7 +20,7 @@ class main_info_test extends \phpbb_test_case
 	/**
 	* Define the extensions to be tested
 	*
-	* @return array vendor/name of extension(s) to test
+	* @return string[] vendor/name of extension(s) to test
 	*/
 	protected static function setup_extensions()
 	{
@@ -36,7 +36,7 @@ class main_info_test extends \phpbb_test_case
 	{
 		$main_info     = new \un1matr1x\ogame\acp\main_info;
 		$output        = $main_info->module();
-		$composer_json = json_decode(file_get_contents(dirname(__FILE__).'/../../composer.json'),true);
+		$composer_json = json_decode(file_get_contents(dirname(__FILE__).'/../../composer.json'), true);
 
 		$this->assertEquals($composer_json['version'], $output['version']);
 
@@ -44,15 +44,15 @@ class main_info_test extends \phpbb_test_case
 	}
 
 	/**
-	* test main_info version is the same as the web-versioncheck annouces
-	*
-	* @return void
-	* @depends test_version_agains_composer
-	*/
+	 * test main_info version is the same as the web-versioncheck annouces
+	 *
+	 * @return void
+	 * @depends test_version_agains_composer
+	 */
 	public function test_version_agains_versioncheck($output)
 	{
 		$composer_json = json_decode(file_get_contents(
-						'http://un1matr1x.github.io/phpBB-EXT-oGame/versioncheck/un1matr1x_ogame_version.json'),true);
+						'http://un1matr1x.github.io/phpBB-EXT-oGame/versioncheck/un1matr1x_ogame_version.json'), true);
 
 		$this->assertEquals($composer_json['unstable']['0.3']['current'], $output['version']);
 	}
