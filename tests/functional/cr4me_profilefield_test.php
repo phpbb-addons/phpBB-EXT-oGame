@@ -16,10 +16,10 @@ namespace un1matr1x\ogame\tests\cr4me_profilefield;
 class cr4me_profilefield_test extends \phpbb_functional_test_case
 {
 	/**
-	* Define the extensions to be tested
-	*
-	* @return string[] vendor/name of extension(s) to test
-	*/
+	 * Define the extensions to be tested
+	 *
+	 * @return string[] vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
