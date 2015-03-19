@@ -18,20 +18,20 @@ require_once dirname(__FILE__).'/../../acp/main_module.php';
 class main_module_test extends \phpbb_test_case
 {
 	/**
-	* Define the extensions to be tested
-	*
-	* @return string[] vendor/name of extension(s) to test
-	*/
+	 * Define the extensions to be tested
+	 *
+	 * @return string[] vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
 	/**
-	* test if check_hex_color()-function work as intended
-	*
-	* @return void
-	*/
+	 * test if check_hex_color()-function work as intended
+	 *
+	 * @return void
+	 */
 	public function test_check_hex_color()
 	{
 		$main_module = new \un1matr1x\ogame\acp\main_module;

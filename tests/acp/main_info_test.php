@@ -18,20 +18,20 @@ require_once dirname(__FILE__).'/../../acp/main_info.php';
 class main_info_test extends \phpbb_test_case
 {
 	/**
-	* Define the extensions to be tested
-	*
-	* @return string[] vendor/name of extension(s) to test
-	*/
+	 * Define the extensions to be tested
+	 *
+	 * @return string[] vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
 	/**
-	* test main_info version is the same as the composer annouces
-	*
-	* @return array
-	*/
+	 * test main_info version is the same as the composer annouces
+	 *
+	 * @return array
+	 */
 	public function test_version_agains_composer()
 	{
 		$main_info     = new \un1matr1x\ogame\acp\main_info;

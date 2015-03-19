@@ -18,10 +18,10 @@ require_once dirname(__FILE__).'/../../core/cr4me_link.php';
 class cr4me_link_test extends \phpbb_test_case
 {
 	/**
-	* Define the extensions to be tested
-	*
-	* @return string[] vendor/name of extension(s) to test
-	*/
+	 * Define the extensions to be tested
+	 *
+	 * @return string[] vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
