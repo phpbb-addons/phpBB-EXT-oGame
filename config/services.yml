@@ -18,7 +18,6 @@ services:
     un1matr1x.ogame.profile_cards:
         class: un1matr1x\ogame\core\profile_cards
         arguments:
-            - @config
             - @dbal.conn
             - @user
             - @service_container

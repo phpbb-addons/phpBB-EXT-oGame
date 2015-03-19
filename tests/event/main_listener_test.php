@@ -17,6 +17,7 @@ class event_listener_test extends \phpbb_test_case
 	/** @var un1matr1x\ogame\event\main_listener */
 	protected $listener;
 	protected $config;
+	protected $db;
 	protected $cr4me_link;
 	protected $profile_cards;
 
@@ -28,10 +29,15 @@ class event_listener_test extends \phpbb_test_case
 		parent::setUp();
 
 		// Load/Mock classes required by the event listener class
-		$this->config        = new \phpbb\config\config();
+		$this->config        = new \phpbb\config\config(array(
+														'un1matr1x_ogame_cr_link' => '1',
+														'un1matr1x_ogame_color' => '31b0d5',
+														'un1matr1x_ogame_color_font' => 'ffffff',
+														));
+		$this->db            = new \phpbb\db\driver\driver_interface;
 		$this->template      = $this->getMockBuilder('\phpbb\template\template')->getMock();
 		$this->cr4me_link    = new \un1matr1x\ogame\core\cr4me_link($this->config);
-		$this->profile_cards = new \un1matr1x\ogame\core\profile_cards($this->config);
+		$this->profile_cards = new \un1matr1x\ogame\core\profile_cards($this->db);
 	}
 
 	/**

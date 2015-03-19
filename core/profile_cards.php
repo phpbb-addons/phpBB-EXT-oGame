@@ -16,9 +16,6 @@ use Symfony\Component\DependencyInjection\Container;
 
 class profile_cards
 {
-	/* @var \phpbb\config\config */
-	protected $config;
-
 	/* @var \phpbb\db\driver\driver_interface */
 	protected $db;
 
@@ -32,15 +29,12 @@ class profile_cards
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config				Config helper
 	 * @param \phpbb\db\driver\driver_interface		$db					Database object
 	 * @param \phpbb\user							$user				User object
 	 * @param Container								$phpbb_container	Service container interface
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\user $user,
-								Container $phpbb_container)
+	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\user $user, Container $phpbb_container)
 	{
-		$this->config          = $config;
 		$this->db              = $db;
 		$this->user            = $user;
 		$this->phpbb_container = $phpbb_container;
