@@ -10,12 +10,12 @@
 
 namespace un1matr1x\ogame\migrations;
 
-class release_0_3_0 extends \phpbb\db\migration\migration
+class release_0_3_1 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
 		return isset($this->config['un1matr1x_ogame_version'])
-				&& version_compare($this->config['un1matr1x_ogame_version'], '0.3.0', '>=');
+				&& version_compare($this->config['un1matr1x_ogame_version'], '0.3.1', '>=');
 	}
 
 	public static function depends_on()

@@ -1,0 +1,20 @@
+<!-- BEGIN un1matr1x -->
+<!-- IF un1matr1x.U_GAMEFORGE_ID  or un1matr1x.U_CR4ME_ID -->
+<div class="panel bg<!-- IF SIGNATURE -->2<!-- ELSE -->1<!-- ENDIF -->">
+	<div class="inner"><span class="corners-top"><span></span></span>
+	<!-- IF un1matr1x.U_GAMEFORGE_ID -->
+	<div class="column1">
+		<h3>{L_MMOGAME}</h3>
+		<script type="text/javascript"> function imgloaded(that){ if (!that.complete) { window.setTimeout(function(){imgloaded(that)},100); return }else if (typeof that.naturalWidth != "undefined" && that.naturalWidth == 0) { window.setTimeout(function(){imgloaded(that)},100); return } jetzt =new Date(); that.name = jetzt.getTime(); } function ismap(that){ var now = new Date(); var diff = (now.getTime()-that.name); var end = that.parentNode.href.lastIndexOf("/"); that.parentNode.href = that.parentNode.href.substring(0,end)+"/"+diff; } </script> <a href="http://gameforge.com/clickGCard/{un1matr1x.U_GAMEFORGE_ID}/2/"><img name="" onload="javascript:imgloaded(this)" onmousedown="javascript:ismap(this);" ismap="ismap" src="http://de.gameforge.com/GCard/2/{un1matr1x.U_GAMEFORGE_ID}.jpg" /></a>
+	</div>
+	<!-- ENDIF -->
+	<!-- IF un1matr1x.U_CR4ME_ID -->
+	<div class="column<!-- IF un1matr1x.U_GAMEFORGE_ID -->2<!-- ELSE -->1<!-- ENDIF -->">
+		<h3>{L_CR_HOSTING}</h3>
+		<a href="http://cr4.me/memberlist.php?mode=viewprofile&u={un1matr1x.U_CR4ME_ID}" title="{L_CR_HOSTING}"><img src="http://cr4.me/images/banner/banner.{un1matr1x.U_CR4ME_ID}.de.gif"></a>
+	</div>
+	<!-- ENDIF -->
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- ENDIF -->
+<!-- END un1matr1x -->

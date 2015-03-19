@@ -15,11 +15,21 @@ namespace un1matr1x\ogame\tests\cr4me_profilefield;
 */
 class cr4me_profilefield_test extends \phpbb_functional_test_case
 {
+	/**
+	 * Define the extensions to be tested
+	 *
+	 * @return string[] vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
 		return array('un1matr1x/ogame');
 	}
 
+	/**
+	 * Function to test if custom profile fields can be used and data is stored correct
+	 *
+	 * @return void
+	 */
 	public function test_submitting_profile_info()
 	{
 		$this->add_lang('ucp');
@@ -27,14 +37,14 @@ class cr4me_profilefield_test extends \phpbb_functional_test_case
 		$crawler = self::request('GET', 'ucp.php?i=ucp_profile&mode=profile_info');
 		$this->assertContainsLang('UCP_PROFILE_PROFILE_INFO', $crawler->filter('#cp-main h2')->text());
 		$form    = $crawler->selectButton('Submit')->form(array(
-			'pf_un1matr1x_cr4me'		=> '2',
-			'pf_un1matr1x_gameforge'	=> '47634',
+			'pf_ogame_crforme'		=> '2',
+			'pf_ogame_gameforge'	=> '47634',
 		));
 		$crawler = self::submit($form);
 		$this->assertContainsLang('PROFILE_UPDATED', $crawler->filter('#message')->text());
 		$crawler = self::request('GET', 'ucp.php?i=ucp_profile&mode=profile_info');
 		$form    = $crawler->selectButton('Submit')->form();
-		$this->assertEquals('2', $form->get('pf_un1matr1x_cr4me')->getValue());
-		$this->assertEquals('47634', $form->get('pf_un1matr1x_gameforge')->getValue());
+		$this->assertEquals('2', $form->get('pf_ogame_crforme')->getValue());
+		$this->assertEquals('47634', $form->get('pf_ogame_gameforge')->getValue());
 	}
 }

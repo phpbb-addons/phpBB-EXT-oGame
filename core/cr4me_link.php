@@ -17,7 +17,7 @@ class cr4me_link
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config
+	 * @param \phpbb\config\config		$config		Config helper
 	 */
 	public function __construct(\phpbb\config\config $config)
 	{
@@ -55,7 +55,7 @@ class cr4me_link
 		}
 
 		return '><span class="cr4me-link"'.$personal_color.
-				'><span class="cr4me-link-image un1matr1x_cr4me-icon"></span>'.$cr_id.'</span><';
+				'><span class="cr4me-link-image ogame_crforme-icon"></span>'.$cr_id.'</span><';
 	}
 
 	/**

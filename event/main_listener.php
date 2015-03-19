@@ -20,12 +20,18 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class main_listener implements EventSubscriberInterface
 {
+	/**
+	 * Assign functions defined in this class to event listeners in the core
+	 *
+	 * @return array
+	 */
 	public static function getSubscribedEvents()
 	{
 		return array(
 			'core.user_setup'							=> 'load_language_on_setup',
 			'core.modify_text_for_display_after'		=> 'cr4_to_image',
 			'core.modify_format_display_text_after'		=> 'cr4_to_image',
+			'core.memberlist_prepare_profile_data'		=> 'view_profile_cards',
 		);
 	}
 
@@ -35,16 +41,35 @@ class main_listener implements EventSubscriberInterface
 	/* @var \un1matr1x\ogame\core\cr4me_link */
 	protected $cr4me_link;
 
+	/* @var \un1matr1x\ogame\core\profile_cards */
+	protected $profile_cards;
+
+	/* @var \phpbb\template\template */
+	protected $template;
+
+	/* @var \phpbb\user */
+	protected $user;
+
 	/**
 	 * Constructor
 	 *
-	 * @param \phpbb\config\config					$config			Config helper
-	 * @param \un1matr1x\ogame\core\cr4me_link		$cr4me_link		cr4me-link parser
+	 * Constructor of event listener
+	 *
+	 * @param \phpbb\config\config					$config				Config helper
+	 * @param \un1matr1x\ogame\core\cr4me_link		$cr4me_link			cr4.me-link parser & beautificator
+	 * @param \un1matr1x\ogame\core\profile_cards	$profile_cards		Profile-card core object
+	 * @param \phpbb\template\template				$template			Template object
+	 * @param \phpbb\user							$user				User object
 	 */
-	public function __construct(\phpbb\config\config $config, \un1matr1x\ogame\core\cr4me_link $cr4me_link)
+	public function __construct(\phpbb\config\config $config, \un1matr1x\ogame\core\cr4me_link $cr4me_link,
+					\un1matr1x\ogame\core\profile_cards $profile_cards, \phpbb\template\template $template,
+					\phpbb\user $user)
 	{
-		$this->config     = $config;
-		$this->cr4me_link = $cr4me_link;
+		$this->config        = $config;
+		$this->cr4me_link    = $cr4me_link;
+		$this->profile_cards = $profile_cards;
+		$this->template      = $template;
+		$this->user          = $user;
 	}
 
 	/**
@@ -80,5 +105,20 @@ class main_listener implements EventSubscriberInterface
 			$text          = $this->cr4me_link->cr4_to_image($event['text']);
 			$event['text'] = $text;
 		}
+	}
+
+	/**
+	 * Assigns the memberlist_view template vars
+	 *
+	 * Function to add cr4.me-signature and gameforge.com g-card to the memberlist_view underneath the normal signature
+	 *
+	 * @param	object		$event	The event object
+	 * @return	void
+	 * @access	public
+	 */
+	public function view_profile_cards($event)
+	{
+		$this->template->assign_block_vars('un1matr1x',
+				$this->profile_cards->view_profile_cards($event['data']['user_id']));
 	}
 }
