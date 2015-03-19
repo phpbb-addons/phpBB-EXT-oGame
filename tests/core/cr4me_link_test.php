@@ -20,7 +20,7 @@ class cr4me_link_test extends \phpbb_test_case
 	/**
 	* Define the extensions to be tested
 	*
-	* @return array vendor/name of extension(s) to test
+	* @return string[] vendor/name of extension(s) to test
 	*/
 	protected static function setup_extensions()
 	{
@@ -30,7 +30,7 @@ class cr4me_link_test extends \phpbb_test_case
 	/**
 	 * This test should make sure every possible cr4.me-link is parsed correct and transformed as intended.
 	 *
-	 * @return	array	$text	an array with hopefully all possible variations of cr4.me-links
+	 * @return	string[]	$text	an array with hopefully all possible variations of cr4.me-links
 	 */
 	public function test_link_recognition()
 	{
