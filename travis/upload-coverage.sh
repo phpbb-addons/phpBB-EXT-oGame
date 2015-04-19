@@ -8,6 +8,8 @@ TRAVIS_PHP_VERSION=$2
 
 if [ "$TRAVIS_PHP_VERSION" = "5.6" -a "$DB" = "mysqli" ]
 then
+	#upload coverage to codacy
+	php ../$BASEDIR/vendor/bin/codacycoverage clover
 	#upload Coverage to coveralls.io
 	php ../$BASEDIR/vendor/bin/coveralls -v
 	#upload Coverage to CodeClimate
