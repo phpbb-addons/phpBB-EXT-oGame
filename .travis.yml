@@ -36,14 +36,14 @@ matrix:
   fast_finish: true
 
 before_install:
-#  - sudo apt-get install tree 
+  - sudo apt-get install tree 
   - composer self-update --verbose
 
 install:
   - composer install --no-interaction --prefer-source --verbose
   - composer require satooshi/php-coveralls:*
   - travis/prepare-phpbb.sh $EXTNAME $PHPBB_BRANCH
-#  - tree -L 3 ../../$BASEDIR/vendor
+  - tree -L 4 ../../$BASEDIR/vendor
   - cp .coveralls.yml ../../phpBB3/phpBB/.coveralls.yml
   - cd ../../phpBB3
   - travis/prepare-extension.sh $EXTNAME $PHPBB_BRANCH
